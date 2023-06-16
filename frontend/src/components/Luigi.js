@@ -56,7 +56,7 @@ const LuigiAnimation = ({ isNight }) => {
             return prevX;
           }
         });
-      }, 100); // Adjust the interval based on desired animation speed
+      }, 60); // Adjust the interval based on desired animation speed
     };
 
     const stopAnimation = () => {
