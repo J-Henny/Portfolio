@@ -192,7 +192,7 @@ const LuigiAnimation = ({ isNight }) => {
       className="luigi-animation"
       style={{
         position: 'fixed',
-        bottom: '0',
+        bottom: '1%',
         left: positionX,
         transform: 'translate(-50%, 0%)',
       }}
