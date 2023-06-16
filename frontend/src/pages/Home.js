@@ -1,10 +1,10 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 
-const Home = () => {
+const Home = ({isNight, setIsNight}) => {
   return (
     <div>
-        <Navbar></Navbar>
+        <Navbar isNight={isNight} setIsNight={setIsNight}></Navbar>
       
     </div>
   )

@@ -1,10 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { Button } from '@mui/material';
 
-const NightLight = () => {
+const NightLight = ({isNight, setIsNight}) => {
+
+  const toggleLight = () => {
+    setIsNight(prev => !prev)
+  }
+
+  const nightLightStyle = {
+    fontSize: '24px',
+    transition: 'color 0.5s',
+    color: isNight ? '#7e72b0' : '#2c1d45',
+    animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse',
+  }
+  
   return (
     <div>
-        <DarkModeIcon style = {{color: '#7e72b0'}}/>
+      <Button
+      onClick={toggleLight}>
+        <DarkModeIcon style = {nightLightStyle}/>
+      </Button>
+        
         
     </div>
   )
