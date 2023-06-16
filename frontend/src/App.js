@@ -7,7 +7,7 @@ function App() {
       style = {{
         fontSize: '100px',
         textAlign: 'center'
-      }}>Sup alex you sexy mofo</h3>
+      }}>Freddy fa-</h3>
     </div>
   );
 }
