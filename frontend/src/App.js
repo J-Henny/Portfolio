@@ -1,13 +1,10 @@
-import './App.css';
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      <h3
-      style = {{
-        fontSize: '100px',
-        textAlign: 'center'
-      }}>Freddy fa-</h3>
+    <div style = {{backgroundColor: '#2c1d45', minHeight: '100vh'}}>
+      <Home></Home>
+
     </div>
   );
 }
