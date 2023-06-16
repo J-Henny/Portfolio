@@ -17,6 +17,7 @@ const GithubButton = ({isNight}) => {
   return (
     <div>
         <Button
+        disableRipple
         onClick = {linkToGithub}>
             <GitHubIcon style = {GithubButtonStyle}></GitHubIcon>
         </Button>

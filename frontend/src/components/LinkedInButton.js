@@ -21,6 +21,7 @@ const LinkedInButton = ({isNight}) => {
   return (
     <div>
         <Button
+        disableRipple
         onClick={linkToLinkedIn}>
             <LinkedInIcon style = {LinkedInButtonStyle}></LinkedInIcon>
         </Button>

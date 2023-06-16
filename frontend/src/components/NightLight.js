@@ -18,6 +18,7 @@ const NightLight = ({isNight, setIsNight}) => {
   return (
     <div>
       <Button
+      disableRipple
       onClick={toggleLight}>
         <DarkModeIcon style = {nightLightStyle}/>
       </Button>
