@@ -1,11 +1,22 @@
 import React from 'react';
-import { useMediaQuery, Box, Button } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { useMediaQuery, Box} from '@mui/material';
+import GithubButton from './GithubButton';
+import LinkedInButton from './LinkedInButton';
+import NightLight from './NightLight';
+import AboutButton from './AboutButton';
+import ContactButton from './ContactButton';
+import ProjectsButton from './ProjectsButton';
+import HamburgerMenu from './HamburgerMenu';
 
-const Navbar = () => {
-  const isMobile = useMediaQuery('(max-width: 600px)');
+const Navbar = ({isNight, setIsNight}) => {
+  const isMobile = useMediaQuery('(max-width: 800px)');
+
+  const iconStyle = {
+    fontSize: isMobile ? '16px' : '24px',
+    transition: 'color 0.5s',
+    color: isNight ? '#7e72b0' : '#2c1d45',
+    animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse',
+  }
 
   return (
     <div>
@@ -15,58 +26,37 @@ const Navbar = () => {
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          padding={'2vh'}
+          padding={'2vw'}
           position="fixed"
-          top={'2rem'}
-          left={'2vw'}
           width="100vw"
           height="10vh"
           zIndex="1"
         >
-          <div>
-            <Box>
-              <span className="font-link" style={{textAlign: 'center', fontSize: '24px', color: '#faf9f6' }}>
+            <Box
+            textAlign='center'
+            width="30vw"
+            max-width="35vw"
+            >
+              <span className="font-link" style={{fontSize: '24px', color: '#faf9f6' }}>
                 The Hurd Haven
               </span>
             </Box>
-            <Box display="flex" alignItems="center">
-            <Box display="flex" gap={isMobile ? '1rem' : '2rem'} marginRight={isMobile ? '2rem' : '4rem'}>
-              <Button disableRipple>About</Button>
-              <Button disableRipple>Projects</Button>
-              <Button disableRipple>Contact</Button>
+            <Box
+              display="flex"
+              justifyContent="flex-end"    
+              max-width = "25vw"
+              width="15vw"
+              marginRight="5vw"         
+              alignItems="center" 
+              gap="5px"
+              >
+                <AboutButton/>
+                <ProjectsButton/>
+                <ContactButton/>
+                <GithubButton iconStyle={iconStyle}/>
+                <LinkedInButton iconStyle={iconStyle}/>
+                <NightLight setIsNight={setIsNight} iconStyle={iconStyle}/>
             </Box>
-            <Box display="flex">
-              <Button disableRipple>
-                <GitHubIcon
-                  style={{
-                    fontSize: isMobile ? '16px' : '24px',
-                    transition: 'color 0.5s',
-                    color: '#2c1d45',
-                  }}
-                />
-              </Button>
-              <Button disableRipple>
-                <LinkedInIcon
-                  style={{
-                    fontSize: isMobile ? '16px' : '24px',
-                    transition: 'color 0.5s',
-                    color: '#2c1d45',
-                  }}
-                />
-              </Button>
-              <Button disableRipple>
-                <DarkModeIcon
-                  style={{
-                    fontSize: isMobile ? '16px' : '24px',
-                    transition: 'color 0.5s',
-                    color: '#2c1d45',
-                  }}
-                />
-              </Button>
-            </Box>
-            </Box>
-
-          </div>
           </Box>
         </div>
       )}
@@ -75,7 +65,8 @@ const Navbar = () => {
           <Box
           display="flex"
           justifyContent="center"
-          alignItems="row"
+          alignItems="center"
+          flexDirection="column"
           top="5vh"
           position="fixed"
           width="100vw"
@@ -84,6 +75,7 @@ const Navbar = () => {
             <span className="font-link" style={{textAlign: 'center', fontSize: '24px', color: '#faf9f6' }}>
               The Hurd Haven
             </span>
+            <HamburgerMenu iconStyle={iconStyle}/>
           </Box>
           
           
