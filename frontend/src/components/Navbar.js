@@ -7,6 +7,7 @@ import AboutButton from './AboutButton';
 import ContactButton from './ContactButton';
 import ProjectsButton from './ProjectsButton';
 import HamburgerMenu from './HamburgerMenu';
+import TitleButton from './TitleButton';
 
 const Navbar = ({isNight, setIsNight, isMobile}) => {
   
@@ -38,9 +39,8 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
             width="30vw"
             max-width="35vw"
             >
-              <span className="font-link" style={{fontSize: '24px', color: '#faf9f6' }}>
-                The Hurd Haven
-              </span>
+              <TitleButton isMobile = {isMobile}/>
+              
             </Box>
             <Box
               display="flex"
@@ -73,9 +73,7 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
           width="100vw"
           zIndex="1"
           >
-            <span className="font-link" style={{textAlign: 'center', fontSize: '22px', color: '#faf9f6' }}>
-              The Hurd Haven
-            </span>
+            <TitleButton isMobile = {isMobile}/>
             <Box
               display="flex"
               justifyContent="center"

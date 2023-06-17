@@ -6,7 +6,7 @@ const ContactButton = () => {
     <div>
       <Button
       disableRipple>
-          <span className = 'font-link' style = {{color: '#faf9f6'}}>Contact</span>
+          <span className = 'font-link' style = {{textTransform: 'none', color: '#faf9f6'}}>Contact</span>
       </Button>
     </div>
   )
