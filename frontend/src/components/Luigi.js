@@ -17,9 +17,8 @@ import luigiWalkRight1Dark from '../images/luigi-right-2-dark.png';
 import luigiWalkRight2Dark from '../images/luigi-right-3-dark.png';
 import luigiWalkRight3Dark from '../images/luigi-right-4-dark.png';
 
-const LuigiAnimation = ({ isNight }) => {
+const LuigiAnimation = ({ isNight, charPos, setCharPos }) => {
   const [animationFrame, setAnimationFrame] = useState(0);
-  const [positionX, setPositionX] = useState(window.innerWidth / 2);
   const [mouseX, setMouseX] = useState(0);
   const [isMovingLeft, setIsMovingLeft] = useState(false);
   const [isMovingRight, setIsMovingRight] = useState(false);
@@ -47,7 +46,7 @@ const LuigiAnimation = ({ isNight }) => {
     const startAnimation = () => {
       animationInterval = setInterval(() => {
         setAnimationFrame((prevFrame) => (prevFrame + 1) % totalFrames);
-        setPositionX((prevX) => {
+        setCharPos((prevX) => {
           if (isMovingLeft) {
             return prevX - movementSpeed;
           } else if (isMovingRight) {
@@ -75,7 +74,7 @@ const LuigiAnimation = ({ isNight }) => {
   }, [isMovingLeft, isMovingRight]);
 
   useEffect(() => {
-    const luigiX = positionX;
+    const luigiX = charPos;
     let isIdle = Math.abs(mouseX - luigiX) <= 1.5;
 
     if (isIdle) {
@@ -101,7 +100,7 @@ const LuigiAnimation = ({ isNight }) => {
     }
   }, [
     mouseX,
-    positionX,
+    charPos,
     isMovingLeft,
     isMovingRight,
     setIsMovingLeft,
@@ -193,7 +192,7 @@ const LuigiAnimation = ({ isNight }) => {
       style={{
         position: 'fixed',
         bottom: '1%',
-        left: positionX,
+        left: charPos,
         transform: 'translate(-50%, 0%)',
       }}
     >
