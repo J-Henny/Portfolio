@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMediaQuery, Box} from '@mui/material';
+import {Box} from '@mui/material';
 import GithubButton from './GithubButton';
 import LinkedInButton from './LinkedInButton';
 import NightLight from './NightLight';
@@ -8,14 +8,15 @@ import ContactButton from './ContactButton';
 import ProjectsButton from './ProjectsButton';
 import HamburgerMenu from './HamburgerMenu';
 
-const Navbar = ({isNight, setIsNight}) => {
-  const isMobile = useMediaQuery('(max-width: 800px)');
+const Navbar = ({isNight, setIsNight, isMobile}) => {
+  
 
   const iconStyle = {
-    fontSize: isMobile ? '16px' : '24px',
+    fontSize: isMobile ? '30px' : '24px',
     transition: 'color 0.5s',
     color: isNight ? '#7e72b0' : '#2c1d45',
     animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse',
+    marginTop: isMobile ? '2vh' : ''
   }
 
   return (
@@ -72,10 +73,18 @@ const Navbar = ({isNight, setIsNight}) => {
           width="100vw"
           zIndex="1"
           >
-            <span className="font-link" style={{textAlign: 'center', fontSize: '24px', color: '#faf9f6' }}>
+            <span className="font-link" style={{textAlign: 'center', fontSize: '22px', color: '#faf9f6' }}>
               The Hurd Haven
             </span>
-            <HamburgerMenu iconStyle={iconStyle}/>
+            <Box
+              display="flex"
+              justifyContent="center"
+              marginTop = "3vh"
+              >
+
+              <HamburgerMenu/>
+            </Box>
+            
           </Box>
           
           

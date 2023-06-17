@@ -1,9 +1,13 @@
+import { Box } from '@mui/material';
 import React from 'react';
 
-const HelloWorld = () => {
+const HelloWorld = ({helloWorldStyle}) => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '80vh' }}>
-      <h3 className='font-link' style={{ fontSize: '64px', color: '#faf9f6' }}>Hello World!</h3>
+    <div>
+      <Box>
+        <h3 className='font-link' style={helloWorldStyle}>Hello World!</h3>
+      </Box>
+      
     </div>
   );
 };

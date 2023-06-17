@@ -1,15 +1,35 @@
 import React from 'react'
 import LuigiAnimation from '../components/Luigi'
 import HelloWorld from '../components/HelloWorld'
+import { Box } from '@mui/material'
 import Blurb from '../components/Blurb'
 
-const Home = ({isNight}) => {
+const Home = ({isNight, isMobile}) => {
+  const helloWorldStyle = {
+    textAlign: 'center',
+    fontSize: isMobile ? '45px' : '64px',
+    color: '#faf9f6',
+    marginTop: '35vh',
+    letterSpacing: '5px',
+  }
+  const blurbStyle = {
+    textAlign: 'center',
+    color: '#faf9f6',
+    justifyContent: 'center',
+    fontSize: isMobile ? '12px' : '20px',
+    padding: '15px',
+    letterSpacing: '1px'
+  }
   return (
     <div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <HelloWorld />
-            <Blurb />
-        </div>
+        <Box
+        display="flex"
+        justifyContent="center"
+        flexDirection="column"
+        >
+            <HelloWorld helloWorldStyle={helloWorldStyle}/>
+            <Blurb blurbStyle={blurbStyle}/>
+        </Box>
         <LuigiAnimation isNight = {isNight}/>
     </div>
   )

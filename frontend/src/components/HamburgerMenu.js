@@ -1,12 +1,12 @@
 import { IconButton } from '@mui/material'
 import React from 'react'
-import MenuIcon from '@mui/icons-material/Menu';
+import triforce from "../images/triforce.png"
 
 const HamburgerMenu = () => {
   return (
     <div>
         <IconButton>
-            <MenuIcon/>
+            <img src={triforce} style={{width: '48px', height: '48px'}}/>
             
         </IconButton>
       
