@@ -10,8 +10,6 @@ function App() {
   const isMobile = useMediaQuery('(max-width: 800px)');
   const appStyle = {
     backgroundColor: isNight ? '#2c1d45' : '#7e72b0',
-    minHeight: '100vh',
-    minWidth: '100vw',
     transition: 'background-color 0.5s',
     animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse',
   };

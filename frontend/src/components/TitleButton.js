@@ -10,7 +10,8 @@ const TitleButton = ({isMobile}) => {
         fontSize: isMobile ? '22px' : '24px',
         color: '#faf9f6',
         textAlign: isMobile ? 'center' : '',
-        textTransform: 'none'
+        textTransform: 'none',
+        marginTop: isMobile ? '5vh' : ''    
     }
   return (
     <div>

@@ -31,8 +31,9 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
           padding={'2vw'}
           position="fixed"
           width="100vw"
-          height="10vh"
-          zIndex="1"
+          height="8vh"
+          zIndex="2"
+          backgroundColor= {isNight ? '#2c1d45' : '#7e72b0' }
         >
             <Box
             textAlign='center'
@@ -68,10 +69,10 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
           justifyContent="center"
           alignItems="center"
           flexDirection="column"
-          top="5vh"
           position="fixed"
           width="100vw"
-          zIndex="1"
+          zIndex="2"
+          backgroundColor= {isNight ? '#2c1d45' : '#7e72b0' }
           >
             <TitleButton isMobile = {isMobile}/>
             <Box

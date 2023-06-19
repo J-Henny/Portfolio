@@ -27,6 +27,8 @@ const Home = ({isNight, isMobile, charPos, setCharPos}) => {
         display="flex"
         justifyContent="center"
         flexDirection="column"
+        width="100vw"
+        height="100vh"
         >
             <HelloWorld helloWorldStyle={helloWorldStyle}/>
             <Blurb blurbStyle={blurbStyle}/>
