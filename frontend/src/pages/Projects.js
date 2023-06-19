@@ -10,10 +10,10 @@ const Projects = ({isNight, isMobile}) => {
   
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh'}}>
-      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '30vh', padding: '1rem'}}>
-        <h3 className='font-link' style={{color: '#faf9f6', fontSize: isMobile ? '12px' : '36px'}}> My Projects</h3>
+      <div style={{marginTop: isMobile ? '25vh' : '10vh', display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '30vh', padding: '1rem'}}>
+        <h3 className='font-link' style={{color: '#faf9f6', fontSize: isMobile ? '24px' : '36px'}}> My Projects</h3>
       
-      <Grid container spacing={15} sx={{justifyContent: 'center', maxWidth: '75vw', marginTop: isMobile ? '10vh' : '1px'}}>
+      <Grid container spacing={15} sx={{justifyContent: 'center', maxWidth: '75vw', marginTop: isMobile ? '0vh' : '-5vh'}}>
         <Grid style ={{display: 'flex', justifyContent: 'center'}} item xs={12} sm={12} md={12} lg={6}>
           <ProjectBox
             imageSrcDay={dysiDay}
@@ -37,7 +37,10 @@ const Projects = ({isNight, isMobile}) => {
           />
         </Grid>
       </Grid>
+
+        <h6 className='font-link' style={{textAlign: 'center', fontSize: '12px', color: '#faf9f6', position: 'relative', marginTop: '7vh'}}>All my other projects and work are available on my Github.</h6>
       </div>
+      
     </div>
   );
 };

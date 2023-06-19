@@ -33,7 +33,9 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
           width="100vw"
           height="8vh"
           zIndex="2"
-          backgroundColor= {isNight ? '#2c1d45' : '#7e72b0' }
+          color= {isNight ? '#2c1d45' : '#7e72b0' }
+          animation={isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse'}
+          transition='color 0.5s'
         >
             <Box
             textAlign='center'
