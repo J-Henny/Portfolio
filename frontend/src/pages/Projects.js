@@ -13,7 +13,7 @@ const Projects = ({isNight, isMobile}) => {
       <div style={{marginTop: isMobile ? '25vh' : '10vh', display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '30vh', padding: '1rem'}}>
         <h3 className='font-link' style={{color: '#faf9f6', fontSize: isMobile ? '24px' : '36px'}}> My Projects</h3>
       
-      <Grid container spacing={15} sx={{justifyContent: 'center', maxWidth: '75vw', marginTop: isMobile ? '0vh' : '-5vh'}}>
+      <Grid container spacing={15} sx={{justifyContent: 'center', maxWidth: isMobile ? '90%' : '80vw', marginTop: isMobile ? '0vh' : '-5vh'}}>
         <Grid style ={{display: 'flex', justifyContent: 'center'}} item xs={12} sm={12} md={12} lg={6}>
           <ProjectBox
             imageSrcDay={dysiDay}
@@ -72,9 +72,9 @@ const ProjectBox = ({ imageSrcNight, imageSrcDay, title, description, isNight, i
     }}>
 
     
-      <Paper className="font-link" elevation={0} style={{maxHeight: '40vh', maxWidth: '35vw', display: 'flex', flexDirection: 'column', transition: 'color 0.5s', backgroundColor: isNight ? '#7e72b0' : '#2c1d45', padding: '20px', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse', borderRadius: '8px', border: '1px solid #faf9f6', height: '100%' }}>
+      <Paper className="font-link" elevation={0} style={{maxHeight: '40vh', maxWidth: isMobile ? '80vw' : '35vw', display: 'flex', flexDirection: 'column', transition: 'color 0.5s', backgroundColor: isNight ? '#7e72b0' : '#2c1d45', padding: '20px', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse', borderRadius: '8px', border: '1px solid #faf9f6', height: '100%' }}>
         <Box display="flex" alignItems="center">
-          <img src={imageSrc} alt={title} style={{ width: '100%', maxWidth: '8vw', height: 'auto', borderRadius: '8px', transition: 'color 0.5s', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse' }} />
+          <img src={imageSrc} alt={title} style={{ width: '100%', maxWidth: '8vw', height: 'auto', borderRadius: '8px', transition: 'color 0.5s',backgroundColor: isNight ? '#7e72b0' : '#2c1d45', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse' }} />
           <Box marginLeft="4vw">
             <Typography className="font-link" variant="h6" gutterBottom sx={{overflow: 'hidden', fontSize: isMobile ? '18px' : '22px', fontFamily: "'Press Start 2P', cursive", color: '#faf9f6'}}>
               {title}
