@@ -17,11 +17,11 @@ FROM nginx:latest
 # Remove default Nginx configurations
 RUN rm -rf /etc/nginx/conf.d/*
 
+# Mount the host's nginx.conf to the container
+VOLUME /etc/nginx
+
 # Copy the static files from the build stage to Nginx
 COPY --from=build /app/build /usr/share/nginx/html
-
-# Copy the Nginx configuration file
-COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80 for web traffic
 EXPOSE 80
