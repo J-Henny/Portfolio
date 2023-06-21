@@ -65,10 +65,16 @@ const ProjectBox = ({ imageSrcNight, imageSrcDay, title, description, isNight, i
   }
   return (
     <Button style={{
-      textTransform: 'none'
+      textTransform: 'none',
+      
     }}
     onClick={() => {
       linkHandler(num);
+    }}
+    sx={{
+      '&hover' : {
+        boxShadow: '5vw 5vw 5vw solid yellow'
+      }
     }}>
 
     
