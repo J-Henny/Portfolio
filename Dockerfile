@@ -1,7 +1,7 @@
 FROM node:18-bullseye-slim as node-builder
 
 WORKDIR /Portfolio/frontend
-COPY frontend/package.json frontend/package-lock.json /Portfolio/frontend
+COPY frontend/package.json frontend/package-lock.json /Portfolio/frontend/
 RUN npm install
 
 COPY frontend /Portfolio/frontend
