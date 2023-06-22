@@ -1,21 +1,32 @@
 import { Box, TextField, createTheme, ThemeProvider, Button } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import sendDark from '../images/send-dark.png';
 import sendLight from '../images/send-light.png';
 
-const Contact = ({isNight}) => {
+const Contact = ({isNight, isMobile}) => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [state, setState] = useState("idle");
-  const [responseMessage, setResponseMessage] = useState("");
+  const [status, setStatus] = useState("");
+  const [statusText, setStatusText] = useState("");
+
+  useEffect(() => {
+    let timer;
+    if(state === 'success' || state === 'failed') {
+      timer = setTimeout(() => {
+        setState('idle');
+      }, 5000);
+    }
+    return () => clearTimeout(timer);
+
+  }, [state]);
 
 
   let sendMessage = async () => {
-    setResponseMessage("Sending...");
     setState("sending");
-    fetch(`/api/send-email`, {
+    fetch(`api/send-email/`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -24,7 +35,6 @@ const Contact = ({isNight}) => {
     }).then((response) => {
       if(response.ok){
         setState("success");
-        setResponseMessage("Message sent!");
 
         setEmail("");
         setMessage("");
@@ -34,7 +44,8 @@ const Contact = ({isNight}) => {
       }
       else {
         setState("failed");
-        setResponseMessage(`Something went wrong. Try again later. ${response.status} : ${response.statusText}`);
+        setStatus(response.status);
+        setStatusText(response.statusText);
         throw response;
       }
     })
@@ -43,40 +54,6 @@ const Contact = ({isNight}) => {
 
   const imageSrc = isNight ? sendDark : sendLight;
 
-  const loadHandler = ({state}) => {
-    switch(state){
-      case "idle":
-        return (
-          <>
-            <h3> hello world </h3>
-          </>
-        )
-      case "sending":
-        return (
-          <>
-            <h3>
-               sending...
-            </h3>
-          </>
-        )
-      case "success":
-        return (
-          <>
-            <h3>
-              Success
-            </h3>
-          </>
-        )
-      case "failed":
-        return (
-          <>
-            <h3>Failed</h3>
-          </>
-        
-        )
-    }
-
-  }
   const theme = createTheme({
     typography: {
       fontFamily: "'Press Start 2P', cursive",
@@ -146,7 +123,9 @@ const Contact = ({isNight}) => {
               <Box
               marginTop="2vh"
               display="flex"
-              flexDirection="row">
+              flexDirection="row"
+              alignItems="center"
+              position="relative">
                 <Button
                 fullWidth
                 disableRipple
@@ -163,7 +142,30 @@ const Contact = ({isNight}) => {
                 >
                   <img src={imageSrc} style={{ width: '100%', maxWidth: '10vw', height: 'auto', borderRadius: '8px', transition: 'color 0.5s', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse' }}/>
                 </Button>
-                {(state) => loadHandler(state)}
+                <Box
+                position="absolute"
+                alignItems="center"
+                right = "15%">
+                  <span className='font-link' style={{textAlign: 'center', fontSize: isMobile ? '12px' : '20px', color: '#faf9f6'}}>
+                    {state === "idle" && (
+                      <></>
+                    )}
+                    {state === "sending" && (
+                      <h3>Sending
+                      <span style={{ animation: 'dots 1.5s infinite' }}>.</span>
+                      <span style={{ animation: 'dots 1.5s infinite', animationDelay: '0.5s' }}>.</span>
+                      <span style={{ animation: 'dots 1.5s infinite', animationDelay: '1s' }}>.</span>
+                      </h3>
+                    )}
+                    {state === "success" && (
+                      <h3>Message sent.</h3>
+                    )}
+                    {state === "failed" && (
+                      <h3>Uh oh! Something went wrong. {status} : {statusText}</h3>
+                    )}
+                  </span>
+                  
+                </Box>
               </Box>
               <h3 className="font-link" style={{lineHeight: '2vh', fontSize: '12px', textAlign: 'center', marginTop: '5vh', color: '#faf9f6'}}>I also have a working carrier pigeon, if you prefer that method.</h3>
 

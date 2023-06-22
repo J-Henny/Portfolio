@@ -4,6 +4,10 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from django.core.mail import send_mail
+import environ
+
+env = environ.Env()
+
 
 @api_view(['POST'])
 @method_decorator(csrf_exempt)
@@ -14,12 +18,12 @@ def sendMail(request):
         email = data['email']
         message = data['message']
 
-        subject = f'{name} sent you a message from Hurd Haven!'
-        body = message
+        subject = f'Someone sent you a message from Hurd Haven!'
+        body = f'From: {name}\n\nEmail: {email}\n\n\n\n{message}'
         send_mail(
             subject,
             body,
-            email,
+            env('EMAIL_HOST_USER'),
             ['jackhenry.hurd@gmail.com']
         )
         return Response(request.data, status=status.HTTP_200_OK)
