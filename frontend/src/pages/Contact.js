@@ -1,11 +1,82 @@
 import { Box, TextField, createTheme, ThemeProvider, Button } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import sendDark from '../images/send-dark.png';
 import sendLight from '../images/send-light.png';
 
 const Contact = ({isNight}) => {
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [state, setState] = useState("idle");
+  const [responseMessage, setResponseMessage] = useState("");
+
+
+  let sendMessage = async () => {
+    setResponseMessage("Sending...");
+    setState("sending");
+    fetch(`/api/send-email`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({name: name, email: email, message: message})
+    }).then((response) => {
+      if(response.ok){
+        setState("success");
+        setResponseMessage("Message sent!");
+
+        setEmail("");
+        setMessage("");
+        setName("");
+
+        return response.json();
+      }
+      else {
+        setState("failed");
+        setResponseMessage(`Something went wrong. Try again later. ${response.status} : ${response.statusText}`);
+        throw response;
+      }
+    })
+
+  }
+
   const imageSrc = isNight ? sendDark : sendLight;
+
+  const loadHandler = ({state}) => {
+    switch(state){
+      case "idle":
+        return (
+          <>
+            <h3> hello world </h3>
+          </>
+        )
+      case "sending":
+        return (
+          <>
+            <h3>
+               sending...
+            </h3>
+          </>
+        )
+      case "success":
+        return (
+          <>
+            <h3>
+              Success
+            </h3>
+          </>
+        )
+      case "failed":
+        return (
+          <>
+            <h3>Failed</h3>
+          </>
+        
+        )
+    }
+
+  }
   const theme = createTheme({
     typography: {
       fontFamily: "'Press Start 2P', cursive",
@@ -45,12 +116,18 @@ const Contact = ({isNight}) => {
                 }}
                 InputLabelProps={{
                   style : {color: '#faf9f6'}
+                }}
+                onChange={(e) => {
+                  setName(e.target.value);
                 }}/>
                 <TextField fullWidth label="Email" InputProps={{
                   style : {color: '#faf9f6'}
                 }}
                 InputLabelProps={{
                   style : {color: '#faf9f6'}
+                }}
+                onChange={(e) => {
+                  setEmail(e.target.value);
                 }}/>
               </Box>
               <Box display="flex" marginTop="2vh">
@@ -59,13 +136,21 @@ const Contact = ({isNight}) => {
                 }}
                 InputLabelProps={{
                   style : {color: '#faf9f6'}
+                }}
+                onChange={(e) => {
+                  setMessage(e.target.value);
                 }}/>
               </Box>
+
+
               <Box
-              marginTop="2vh">
+              marginTop="2vh"
+              display="flex"
+              flexDirection="row">
                 <Button
                 fullWidth
                 disableRipple
+                onClick = {sendMessage}
                 sx={{
                   backgroundColor: 'transparent', // Remove the background color
                   '&:hover': {
@@ -78,9 +163,10 @@ const Contact = ({isNight}) => {
                 >
                   <img src={imageSrc} style={{ width: '100%', maxWidth: '10vw', height: 'auto', borderRadius: '8px', transition: 'color 0.5s', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse' }}/>
                 </Button>
-                <h3 className="font-link" style={{lineHeight: '2vh', fontSize: '12px', textAlign: 'center', marginTop: '5vh', color: '#faf9f6'}}>I also have a working carrier pigeon, if you prefer that method.</h3>
-
+                {(state) => loadHandler(state)}
               </Box>
+              <h3 className="font-link" style={{lineHeight: '2vh', fontSize: '12px', textAlign: 'center', marginTop: '5vh', color: '#faf9f6'}}>I also have a working carrier pigeon, if you prefer that method.</h3>
+
             </form>
           </Box>
         </div>
