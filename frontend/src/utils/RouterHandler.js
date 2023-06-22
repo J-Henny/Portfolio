@@ -13,7 +13,7 @@ const RouterHandler = ({isNight, setIsNight, isMobile, charPos, setCharPos}) => 
             <Route path='/' element={<Home isNight={isNight} setIsNight={setIsNight} isMobile={isMobile} charPos={charPos} setCharPos={setCharPos}/>}/>
             <Route path="/about" element={<About isMobile={isMobile} isNight={isNight} charPos={charPos} setCharPos={setCharPos}/>}/>
             <Route path="/projects" element={<Projects isNight={isNight} isMobile={isMobile}/>}/>
-            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/contact" element={<Contact isNight={isNight}/>}/>
         </Routes>
     </div>
   )

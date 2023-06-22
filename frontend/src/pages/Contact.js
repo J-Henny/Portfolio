@@ -1,46 +1,81 @@
-import { Box } from '@mui/material'
-import React from 'react'
+import { Box, TextField, createTheme, ThemeProvider, Button } from '@mui/material';
+import React from 'react';
+import sendDark from '../images/send-dark.png';
+import sendLight from '../images/send-light.png';
 
-const Contact = () => {
+const Contact = ({isNight}) => {
 
-  const fontStyle = {
-    color: '#faf9f6',
-  }
+  const imageSrc = isNight ? sendDark : sendLight;
+  const theme = createTheme({
+    typography: {
+      fontFamily: "'Press Start 2P', cursive",
+    },
+    components: {
+      MuiTextField: {
+        styleOverrides:  {
+          root: {
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: isNight ? '#7e72b0' : '#2c1d45', 
+              },
+              '&:hover fieldset': {
+                borderColor: isNight ? '#7e72b0' : '#2c1d45',
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: isNight ? '#7e72b0' : '#2c1d45',
+              },
+            },
+          },
+        },
+      },
+    },
+  });
   return (
-    <div style={{display: 'flex', width: '100vw', height: '100vh', justifyContent: 'center'}}>
-      <div style={{marginTop: '25vh'}}>
-        <h3 className='font-link' style={{textAlign: 'center', color: '#faf9f6', fontSize: '36px'}}>
-          Contact Me
-        </h3>
-        <Box
-        display="flex"
-        justifyContent="flex-start"
-        flexDirection="column"
-        marginLeft="-15vw"
-        > 
-        <span className='font-link' style={fontStyle}>
-          <br></br><br></br><br></br>
-            <h3>
-              Email: &emsp;&emsp;&emsp;&emsp; jackhenry.hurd@gmail.com
-            </h3><br></br><br></br>
-            <h3>
-              Phone: &emsp;&emsp;&emsp;&emsp; (720) - 391 - 5089
-            </h3><br></br><br></br>
-            <h3>
-              LinkedIn: &emsp;&emsp;(720) - 391 - 5089
-            </h3><br></br><br></br>
+    <ThemeProvider theme={theme}>
+      <div style={{ display: 'flex', width: '100vw', height: '100vh', justifyContent: 'center' }}>
+        <div style={{ marginTop: '25vh' }}>
+          <h3 className='font-link' style={{ textAlign: 'center', color: '#faf9f6', fontSize: '36px' }}>
+            Contact Me
+          </h3>
+          <Box display="flex" maxWidth="70vw" maxHeight="50vh" flexDirection="column" alignContent="center">
+            <form>
+              <Box display="flex" flexDirection="row" marginTop="2vh" gap="1vw">
+                <TextField fullWidth label="Name" InputProps={{
+                  style : {color: '#faf9f6'}
+                }}
+                InputLabelProps={{
+                  style : {color: '#faf9f6'}
+                }}/>
+                <TextField fullWidth label="Email" InputProps={{
+                  style : {color: '#faf9f6'}
+                }}
+                InputLabelProps={{
+                  style : {color: '#faf9f6'}
+                }}/>
+              </Box>
+              <Box display="flex" marginTop="2vh">
+                <TextField label="Message" fullWidth multiline rows={8} InputProps={{
+                  style : {color: '#faf9f6'}
+                }}
+                InputLabelProps={{
+                  style : {color: '#faf9f6'}
+                }}/>
+              </Box>
+              <Box
+              marginTop="2vh">
+                <Button
+                fullWidth
+                >
+                  <img src={imageSrc} style={{ width: '100%', maxWidth: '10vw', height: 'auto', borderRadius: '8px', transition: 'color 0.5s', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse' }}/>
+                </Button>
 
-            <h3>
-              Github: &emsp;&emsp;&emsp; (720) - 391 - 5089
-            </h3>
-          </span>
-
-
-        </Box>
+              </Box>
+            </form>
+          </Box>
+        </div>
       </div>
-      
-    </div>
-  )
-}
+    </ThemeProvider>
+  );
+};
 
-export default Contact
+export default Contact;
