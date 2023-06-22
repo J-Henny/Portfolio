@@ -23,6 +23,23 @@ const Contact = ({isNight, isMobile}) => {
 
   }, [state]);
 
+  const [dotCount, setDotCount] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDotCount((prevCount) => (prevCount % 3) + 1);
+    }, 500); // Adjust the interval duration (in milliseconds) as desired
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const renderDots = () => {
+    const dots = '.'.repeat(dotCount);
+    return <span>{dots}</span>;
+  };
+
 
   let sendMessage = async () => {
     setState("sending");
@@ -81,14 +98,22 @@ const Contact = ({isNight, isMobile}) => {
   return (
     <ThemeProvider theme={theme}>
       <div style={{ display: 'flex', width: '100vw', height: '100vh', justifyContent: 'center' }}>
-        <div style={{ marginTop: '25vh' }}>
-          <h3 className='font-link' style={{ textAlign: 'center', color: '#faf9f6', fontSize: '36px' }}>
+        <div style={{ marginTop: isMobile ? '30vh' : '25vh' }}>
+          <h3 className='font-link' style={{ textAlign: 'center', color: '#faf9f6', fontSize: isMobile ? '24px' : '36px' }}>
             Contact Me
           </h3>
-          <Box display="flex" maxWidth="70vw" maxHeight="50vh" flexDirection="column" alignContent="center">
+          <Box display="flex" 
+          alignItems="center" 
+          justifyContent="center" 
+          textAlign="center" 
+          maxWidth="70vw" 
+          maxHeight="50vh" 
+          flexDirection="column" 
+          alignContent="center"
+          margin="0 auto">
             <form>
-              <Box display="flex" flexDirection="row" marginTop="2vh" gap="1vw">
-                <TextField fullWidth label="Name" InputProps={{
+              <Box display="flex" flexDirection="row" marginTop={isMobile ? "12vh" : "12vh"} gap="1vw">
+                <TextField value={name} fullWidth label="Name" InputProps={{
                   style : {color: '#faf9f6'}
                 }}
                 InputLabelProps={{
@@ -97,7 +122,7 @@ const Contact = ({isNight, isMobile}) => {
                 onChange={(e) => {
                   setName(e.target.value);
                 }}/>
-                <TextField fullWidth label="Email" InputProps={{
+                <TextField value={email} fullWidth label="Email" InputProps={{
                   style : {color: '#faf9f6'}
                 }}
                 InputLabelProps={{
@@ -108,7 +133,7 @@ const Contact = ({isNight, isMobile}) => {
                 }}/>
               </Box>
               <Box display="flex" marginTop="2vh">
-                <TextField label="Message" fullWidth multiline rows={8} InputProps={{
+                <TextField value={message} label="Message" fullWidth multiline rows={8} InputProps={{
                   style : {color: '#faf9f6'}
                 }}
                 InputLabelProps={{
@@ -131,12 +156,12 @@ const Contact = ({isNight, isMobile}) => {
                 disableRipple
                 onClick = {sendMessage}
                 sx={{
-                  backgroundColor: 'transparent', // Remove the background color
+                  backgroundColor: 'transparent', 
                   '&:hover': {
-                    backgroundColor: 'transparent', // Remove the background color on hover
+                    backgroundColor: 'transparent',
                   },
                   '&:active': {
-                    backgroundColor: 'transparent', // Remove the background color on click
+                    backgroundColor: 'transparent', 
                   },
                 }}
                 >
@@ -145,16 +170,14 @@ const Contact = ({isNight, isMobile}) => {
                 <Box
                 position="absolute"
                 alignItems="center"
-                right = "15%">
-                  <span className='font-link' style={{textAlign: 'center', fontSize: isMobile ? '12px' : '20px', color: '#faf9f6'}}>
+                left="70%">
+                  <span className='font-link' style={{textAlign: 'left', fontSize: isMobile ? '10px' : '12px', color: '#faf9f6'}}>
                     {state === "idle" && (
                       <></>
                     )}
                     {state === "sending" && (
                       <h3>Sending
-                      <span style={{ animation: 'dots 1.5s infinite' }}>.</span>
-                      <span style={{ animation: 'dots 1.5s infinite', animationDelay: '0.5s' }}>.</span>
-                      <span style={{ animation: 'dots 1.5s infinite', animationDelay: '1s' }}>.</span>
+                      {renderDots()}
                       </h3>
                     )}
                     {state === "success" && (
@@ -167,7 +190,7 @@ const Contact = ({isNight, isMobile}) => {
                   
                 </Box>
               </Box>
-              <h3 className="font-link" style={{lineHeight: '2vh', fontSize: '12px', textAlign: 'center', marginTop: '5vh', color: '#faf9f6'}}>I also have a working carrier pigeon, if you prefer that method.</h3>
+              <h3 className="font-link" style={{lineHeight: isMobile ? '1.5vh' : '2vh', fontSize: isMobile ? '10px' : '12px', textAlign: 'center', marginTop: isMobile ? '2vh' : '5vh', color: '#faf9f6'}}>I also have a working carrier pigeon, if you prefer that method.</h3>
 
             </form>
           </Box>
