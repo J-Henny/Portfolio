@@ -65,9 +65,20 @@ const Contact = ({isNight}) => {
               marginTop="2vh">
                 <Button
                 fullWidth
+                disableRipple
+                sx={{
+                  backgroundColor: 'transparent', // Remove the background color
+                  '&:hover': {
+                    backgroundColor: 'transparent', // Remove the background color on hover
+                  },
+                  '&:active': {
+                    backgroundColor: 'transparent', // Remove the background color on click
+                  },
+                }}
                 >
                   <img src={imageSrc} style={{ width: '100%', maxWidth: '10vw', height: 'auto', borderRadius: '8px', transition: 'color 0.5s', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse' }}/>
                 </Button>
+                <h3 className="font-link" style={{lineHeight: '2vh', fontSize: '12px', textAlign: 'center', marginTop: '5vh', color: '#faf9f6'}}>I also have a working carrier pigeon, if you prefer that method.</h3>
 
               </Box>
             </form>

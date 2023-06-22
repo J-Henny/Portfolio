@@ -19,7 +19,16 @@ const TitleButton = ({isMobile}) => {
         disableRipple
         onClick={() => {
             navigate("/");
-        }}>
+        }}
+        sx={{
+            backgroundColor: 'transparent', // Remove the background color
+            '&:hover': {
+              backgroundColor: 'transparent', // Remove the background color on hover
+            },
+            '&:active': {
+              backgroundColor: 'transparent', // Remove the background color on click
+            },
+          }}>
             <span className="font-link" style={titleStyle}>
                 The Hurd Haven
             </span>

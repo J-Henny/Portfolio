@@ -17,7 +17,16 @@ const LinkedInButton = ({iconStyle}) => {
     <div>
         <Button
         disableRipple
-        onClick={linkToLinkedIn}>
+        onClick={linkToLinkedIn}
+        sx={{
+          backgroundColor: 'transparent', // Remove the background color
+          '&:hover': {
+            backgroundColor: 'transparent', // Remove the background color on hover
+          },
+          '&:active': {
+            backgroundColor: 'transparent', // Remove the background color on click
+          },
+        }}>
           <LinkedInIcon style = {iconStyle} />
         </Button>
       

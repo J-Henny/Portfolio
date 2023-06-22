@@ -13,7 +13,16 @@ const NightLight = ({setIsNight, iconStyle}) => {
     <div>
       <Button
       disableRipple
-      onClick={toggleLight}>
+      onClick={toggleLight}
+      sx={{
+        backgroundColor: 'transparent', // Remove the background color
+        '&:hover': {
+          backgroundColor: 'transparent', // Remove the background color on hover
+        },
+        '&:active': {
+          backgroundColor: 'transparent', // Remove the background color on click
+        },
+      }}>
           <DarkModeIcon style = {iconStyle}/>
         
       </Button>

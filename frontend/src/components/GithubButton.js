@@ -13,7 +13,16 @@ const GithubButton = ({iconStyle}) => {
     <div>
         <Button
         disableRipple
-        onClick = {linkToGithub}>
+        onClick = {linkToGithub}
+        sx={{
+          backgroundColor: 'transparent', // Remove the background color
+          '&:hover': {
+            backgroundColor: 'transparent', // Remove the background color on hover
+          },
+          '&:active': {
+            backgroundColor: 'transparent', // Remove the background color on click
+          },
+        }}>
             <GitHubIcon style = {iconStyle}/>
 
             

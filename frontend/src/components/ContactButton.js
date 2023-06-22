@@ -11,6 +11,15 @@ const ContactButton = () => {
       disableRipple
       onClick={() => {
         navigate("/contact")
+      }}
+      sx={{
+        backgroundColor: 'transparent', // Remove the background color
+        '&:hover': {
+          backgroundColor: 'transparent', // Remove the background color on hover
+        },
+        '&:active': {
+          backgroundColor: 'transparent', // Remove the background color on click
+        },
       }}>
           <span className = 'font-link' style = {{textTransform: 'none', color: '#faf9f6'}}>Contact</span>
       </Button>

@@ -72,9 +72,13 @@ const ProjectBox = ({ imageSrcNight, imageSrcDay, title, description, isNight, i
       linkHandler(num);
     }}
     sx={{
-      '&hover' : {
-        boxShadow: '5vw 5vw 5vw solid yellow'
-      }
+      backgroundColor: 'transparent', // Remove the background color
+      '&:hover': {
+        backgroundColor: 'transparent', // Remove the background color on hover
+      },
+      '&:active': {
+        backgroundColor: 'transparent', // Remove the background color on click
+      },
     }}>
 
     

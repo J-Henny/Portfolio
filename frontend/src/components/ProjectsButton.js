@@ -9,6 +9,16 @@ const ProjectsButton = () => {
       <Button disableRipple
       onClick={() => {
         navigate("/projects");
+      }}
+      sx={{
+        backgroundColor: 'transparent', // Remove the background color
+        '&:hover': {
+          backgroundColor: 'transparent',
+           // Remove the background color on hover
+        },
+        '&:active': {
+          backgroundColor: 'transparent', // Remove the background color on click
+        },
       }}>
           <span className = 'font-link' style = {{color: '#faf9f6', textTransform: 'none'}}>Projects</span>
       </Button>
