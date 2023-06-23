@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN mkdir -p /portfolio/frontend/build/static
-RUN yes yes | python manage.py collectstatic
+RUN yes yes | python backend/manage.py collectstatic
 
 
 FROM node:18.12.1-alpine as frontend
