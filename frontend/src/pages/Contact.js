@@ -112,7 +112,7 @@ const Contact = ({isNight, isMobile}) => {
           alignContent="center"
           margin="0 auto">
             <form>
-              <Box display="flex" flexDirection="row" marginTop={isMobile ? "12vh" : "12vh"} gap="1vw">
+              <Box display="flex" flexDirection="row" marginTop={isMobile ? "12vh" : "20%"} gap="1vw">
                 <TextField value={name} fullWidth label="Name" InputProps={{
                   style : {color: '#faf9f6'}
                 }}
