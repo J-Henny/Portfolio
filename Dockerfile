@@ -1,4 +1,3 @@
-
 FROM python:3.9.16 as base
 
 FROM base as backend
@@ -26,19 +25,14 @@ COPY frontend/ .
 RUN npm run build
 
 
-FROM base as final
-
-RUN apt-get install -y nginx
+FROM nginx as final
 
 WORKDIR /portfolio
-COPY . /portfolio
 
 COPY --from=frontend /portfolio/frontend/build /usr/share/nginx/html
 COPY --from=backend /portfolio/nginx.conf /etc/nginx/nginx.conf
 COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
 
-RUN mv nginx.conf /etc/nginx/nginx.conf
-
 EXPOSE 80
 
-CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend.wsgi
+CMD nginx -g "daemon off;" && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend.wsgi
