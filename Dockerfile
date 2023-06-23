@@ -33,6 +33,9 @@ COPY --from=frontend /portfolio/frontend/build /usr/share/nginx/html
 COPY --from=backend /portfolio/nginx.conf /etc/nginx/nginx.conf
 COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
 
+COPY fullchain.pem /etc/letsencrypt/live/hurdhaven.dev/fullchain.pem
+COPY privkey.pem /etc/letsencrypt/live/hurdhaven.dev/privkey.pem
+
 EXPOSE 80
 
 CMD nginx -g "daemon off;" && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend.wsgi
