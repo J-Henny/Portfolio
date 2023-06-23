@@ -10,6 +10,7 @@ const About = ({isMobile, isNight, charPos, setCharPos}) => {
         justifyContent="center"
         flexDirection="column"
         alignItems="center"
+        zIndex="-1"
         >
           <h2
           className='font-link'

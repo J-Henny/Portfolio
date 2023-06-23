@@ -1,5 +1,7 @@
 
-FROM python:3.9.16 as backend
+FROM python:3.9.16 as base
+
+FROM base as backend
 
 WORKDIR /portfolio
 
@@ -24,14 +26,19 @@ COPY frontend/ .
 RUN npm run build
 
 
-FROM nginx:latest
+FROM base as final
+
+RUN sudo yum install -y nginx
+
+WORKDIR /portfolio
+COPY . /portfolio
 
 COPY --from=frontend /portfolio/frontend/build /usr/share/nginx/html
 COPY --from=backend /portfolio/nginx.conf /etc/nginx/nginx.conf
+COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
 
-COPY /etc/letsencrypt/live/hurdhaven.dev/fullchain.pem /etc/nginx/certs/fullchain.pem
-COPY /etc/letsencrypt/live/hurdhaven.dev/privkey.pem /etc/nginx/certs/privkey.pem
+RUN mv nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend.wsgi
