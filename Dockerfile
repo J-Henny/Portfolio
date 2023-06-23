@@ -18,7 +18,7 @@ WORKDIR /portfolio/frontend
 
 COPY frontend/package.json .
 COPY frontend/package-lock.json .
-RUN npm ci --silent
+RUN npm install
 
 COPY frontend/ .
 RUN npm run build
