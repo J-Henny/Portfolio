@@ -33,6 +33,5 @@ COPY /etc/letsencrypt/live/hurdhaven.dev/fullchain.pem /etc/nginx/certs/fullchai
 COPY /etc/letsencrypt/live/hurdhaven.dev/privkey.pem /etc/nginx/certs/privkey.pem
 
 EXPOSE 80
-EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]
