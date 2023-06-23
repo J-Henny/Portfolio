@@ -1,7 +1,11 @@
 
 FROM python:3.9.16 as base
 
+RUN apt-get update
+
 FROM base as backend
+
+RUN apt-get install -y --no-install-recommends gcc libc-dev
 
 WORKDIR /portfolio
 
@@ -28,7 +32,7 @@ RUN npm run build
 
 FROM base as final
 
-RUN sudo yum install -y nginx
+RUN apt-get install -y nginx
 
 WORKDIR /portfolio
 COPY . /portfolio
