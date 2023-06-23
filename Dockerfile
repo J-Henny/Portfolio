@@ -29,6 +29,10 @@ FROM nginx:latest
 COPY --from=frontend /portfolio/frontend/build /usr/share/nginx/html
 COPY --from=backend /portfolio/nginx.conf /etc/nginx/nginx.conf
 
+COPY /etc/letsencrypt/live/hurdhaven.dev/fullchain.pem /etc/nginx/certs/fullchain.pem
+COPY /etc/letsencrypt/live/hurdhaven.dev/privkey.pem /etc/nginx/certs/privkey.pem
+
 EXPOSE 80
+EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]
