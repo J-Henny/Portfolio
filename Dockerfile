@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /portfolio
 
-RUN mkdir -p /didyouseeit/frontend/build/static && \
+RUN mkdir -p /portfolio/frontend/build/static && \
     yes yes | python3 manage.py collectstatic
 
 
