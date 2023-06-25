@@ -7,34 +7,35 @@ WORKDIR /portfolio
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY . /portfolio
 
-RUN mkdir -p /portfolio/frontend/build/static
-RUN python /portfolio/backend/manage.py collectstatic --noinput
+RUN mkdir -p /didyouseeit/frontend/build/static && \
+    yes yes | python3 manage.py collectstatic
 
 
 FROM node:18.12.1-alpine as frontend
 
 WORKDIR /portfolio/frontend
 
-COPY frontend/package.json .
-COPY frontend/package-lock.json .
+COPY frontend/package.json frontend/package-lock.json /portfolio/frontend
 RUN npm install --legacy-peer-deps
 
-COPY frontend/ .
+COPY frontend /portfolio/frontend
 RUN npm run build
 
 
-FROM nginx as final
+FROM base as final
+
+RUN apt-get install -y nginx
 
 WORKDIR /portfolio
+COPY . /portfolio
 
 COPY --from=frontend /portfolio/frontend/build /usr/share/nginx/html
 COPY --from=backend /portfolio/nginx.conf /etc/nginx/nginx.conf
 COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
 
-ADD /etc/letsencrypt/live/hurdhaven.dev/fullchain.pem /etc/letsencrypt/live/hurdhaven.dev/fullchain.pem
-ADD /etc/letsencrypt/live/hurdhaven.dev/privkey.pem /etc/letsencrypt/live/hurdhaven.dev/privkey.pem
+RUN mv nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
