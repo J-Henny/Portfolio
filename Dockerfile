@@ -4,7 +4,7 @@ FROM base as backend
 
 WORKDIR /portfolio
 
-COPY requirements.txt 
+COPY requirements.txt /portfolio
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /portfolio
