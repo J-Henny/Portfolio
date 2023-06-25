@@ -17,7 +17,8 @@ FROM node:18.12.1-alpine as frontend
 
 WORKDIR /portfolio/frontend
 
-COPY frontend/package.json frontend/package-lock.json /portfolio/frontend
+COPY frontend/package.json /portfolio/frontend
+COPY frontend/package-lock.json /portfolio/frontend
 RUN npm install --legacy-peer-deps
 
 COPY frontend /portfolio/frontend
