@@ -1,36 +1,45 @@
-FROM python:3.9.16 as base
-
-FROM base as backend
+# Stage 1: Backend build
+FROM python:3.9.6-slim-buster as backend
 
 WORKDIR /portfolio
 
-COPY requirements.txt /portfolio
-RUN pip install --no-cache-dir -r requirements.txt
+COPY backend/requirements.txt .
 
-COPY . /portfolio
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && apt-get install -y --no-install-recommends libpq-dev \
+    && pip install --no-cache-dir -r requirements.txt
 
-RUN mkdir -p /portfolio/frontend/build/static && \
-    yes yes | python3 /portfolio/backend/manage.py collectstatic
+COPY backend .
 
-
-FROM node:18.12.1-alpine as frontend
+# Stage 2: Frontend build
+FROM node:16.10.0-alpine as frontend
 
 WORKDIR /portfolio/frontend
 
-COPY frontend/package.json /portfolio/frontend
-COPY frontend/package-lock.json /portfolio/frontend
-RUN npm install --legacy-peer-deps
+COPY frontend/package.json .
+COPY frontend/package-lock.json .
 
-COPY frontend /portfolio/frontend
+RUN npm ci --silent
+
+COPY frontend .
+
 RUN npm run build
 
+# Stage 3: Final image
+FROM python:3.9.6-slim-buster
 
-FROM tiangolo/uwsgi-nginx:python3.9 as final
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends nginx \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY --from=frontend /portfolio/frontend/build /usr/share/nginx/html
-COPY --from=backend /portfolio/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
+COPY --from=backend /portfolio /portfolio
+COPY --from=frontend /portfolio/frontend/build /var/www/html
+
+COPY nginx.conf /etc/nginx/sites-available/default
+
+WORKDIR /portfolio/backend
 
 EXPOSE 80
 
-CMD ["python", "-m", "backend.wsgi"]
+CMD service nginx start && gunicorn backend.wsgi:application --bind 0.0.0.0:8000
