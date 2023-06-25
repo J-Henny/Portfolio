@@ -4,13 +4,13 @@ FROM base as backend
 
 WORKDIR /portfolio
 
-COPY requirements.txt .
+COPY requirements.txt 
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /portfolio
 
 RUN mkdir -p /portfolio/frontend/build/static && \
-    yes yes | python3 manage.py collectstatic
+    yes yes | python3 /portfolio/backend/manage.py collectstatic
 
 
 FROM node:18.12.1-alpine as frontend
