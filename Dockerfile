@@ -25,19 +25,12 @@ COPY frontend /portfolio/frontend
 RUN npm run build
 
 
-FROM base as final
-
-RUN apt-get install -y nginx
-
-WORKDIR /portfolio
-COPY . /portfolio
+FROM tiangolo/uwsgi-nginx:python3.9 as final
 
 COPY --from=frontend /portfolio/frontend/build /usr/share/nginx/html
-COPY --from=backend /portfolio/nginx.conf /etc/nginx/nginx.conf
+COPY --from=backend /portfolio/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
-
-RUN mv nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
-CMD nginx -g "daemon off;" && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend.wsgi
+CMD ["python", "-m", "backend.wsgi"]
