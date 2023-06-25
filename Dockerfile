@@ -36,7 +36,7 @@ RUN apt-get update \
 COPY --from=backend /portfolio /portfolio
 COPY --from=frontend /portfolio/frontend/build /var/www/html
 
-COPY nginx.conf /etc/nginx/sites-available/default
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /portfolio/backend
 
