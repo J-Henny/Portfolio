@@ -3,14 +3,14 @@ FROM python:3.9.6-slim-buster as backend
 
 WORKDIR /portfolio
 
-COPY backend/requirements.txt .
+COPY requirements.txt .
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential \
     && apt-get install -y --no-install-recommends libpq-dev \
     && pip install --no-cache-dir -r requirements.txt
 
-COPY backend .
+COPY . .
 
 # Stage 2: Frontend build
 FROM node:16.10.0-alpine as frontend
