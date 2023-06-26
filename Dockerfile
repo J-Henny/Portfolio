@@ -19,7 +19,7 @@ FROM python:3.9-alpine as base
 FROM base as backend
 
 WORKDIR /portfolio
-COPY ./backend .
+COPY ./backend /portfolio/backend
 COPY requirements.txt /portfolio
 RUN python -m pip install -r requirements.txt
 

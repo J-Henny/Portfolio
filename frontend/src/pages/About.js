@@ -26,11 +26,11 @@ const About = ({isMobile, isNight, charPos, setCharPos}) => {
           className='font-link'
           style={{
             textAlign: 'center',
-            fontSize: isMobile ? '18px' : '24px',
-            letterSpacing: '5px',
+            fontSize: isMobile ? '12px' : '20px',
+            letterSpacing: '4px',
             color: '#faf9f6',
-            lineHeight: isMobile ? '4vh' : '5vh',
-            maxWidth: '80vw'
+            lineHeight: isMobile ? '3vh' : '5vh',
+            maxWidth: isMobile ? '85vw' : '80vw'
           }}>
             Hey there! I'm Jack. I love to ski, listen to music, play video games, and visit with my loved ones. I have lived in Colorado for most of my life, and love the outdoors.
             I found passion in software early in my college career after switching from studying aerospace engineering (yuck! ^_^). I grew to love how computers pick my brain
