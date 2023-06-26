@@ -189,7 +189,7 @@ const Contact = ({isNight, isMobile}) => {
                   
                 </Box>
               </Box>
-              <h3 className="font-link" style={{lineHeight: isMobile ? '1.5vh' : '2vh', fontSize: isMobile ? '10px' : '12px', textAlign: 'center', marginTop: isMobile ? '2vh' : '5vh', color: '#faf9f6'}}>I also have a working carrier pigeon, if you prefer that method.</h3>
+              <h3 className="font-link" style={{lineHeight: isMobile ? '1.5vh' : '2vh', fontSize: isMobile ? '10px' : '12px', textAlign: 'center',  color: '#faf9f6'}}>I also have a working carrier pigeon, if you prefer that method.</h3>
 
             </form>
           </Box>

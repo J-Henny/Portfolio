@@ -22,6 +22,7 @@ WORKDIR /portfolio
 COPY ./backend /portfolio/backend
 COPY requirements.txt /portfolio
 RUN python -m pip install -r requirements.txt
+RUN mv .env .
 
 RUN python backend/manage.py collectstatic --noinput
 
