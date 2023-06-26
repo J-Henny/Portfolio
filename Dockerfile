@@ -1,45 +1,50 @@
-# Stage 1: Backend build
-FROM python:3.9.6-slim-buster as backend
+#Build frontend static files
 
-WORKDIR /portfolio
-
-COPY requirements.txt .
-
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends build-essential \
-    && apt-get install -y --no-install-recommends libpq-dev \
-    && pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-# Stage 2: Frontend build
 FROM node:16.10.0-alpine as frontend
 
 WORKDIR /portfolio/frontend
-
-COPY frontend/package.json .
-COPY frontend/package-lock.json .
-
+COPY frontend/package.json /portfolio/frontend
+COPY frontend/package-lock.json /portfolio/frontend
 RUN npm ci --silent
 
-COPY frontend .
-
+COPY frontend /portfolio/frontend
 RUN npm run build
 
-# Stage 3: Final image
-FROM python:3.9.6-slim-buster
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends nginx \
-    && rm -rf /var/lib/apt/lists/*
 
-COPY --from=backend /portfolio /portfolio
-COPY --from=frontend /portfolio/frontend/build /var/www/html
+#Build backend
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+FROM python:3.9-latest as base
 
-WORKDIR /portfolio/backend
+FROM base as backend
+
+WORKDIR /portfolio
+COPY ./backend .
+COPY requirements.txt /portfolio
+RUN python -m pip install -r requirements.txt
+
+RUN python backend/manage.py collectstatic --noinput
+
+
+# Nginx build
+
+FROM base as final
+
+RUN apt-get install -y nginx
+
+WORKDIR /portfolio
+COPY . /portfolio
+
+COPY --from=backend /usr/lib/python3.9/site-packages /usr/lib/python3.9/site-packages
+COPY --from=frontend /portfolio/frontend/build /portfolio/frontend/build
+COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
+RUN mv nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
+CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend/backend.wsgi
 
-CMD service nginx start && gunicorn backend.wsgi:application --bind 0.0.0.0:8000
+
+
+
+
+

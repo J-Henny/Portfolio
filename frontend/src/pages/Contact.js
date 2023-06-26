@@ -98,21 +98,20 @@ const Contact = ({isNight, isMobile}) => {
   return (
     <ThemeProvider theme={theme}>
       <div style={{ display: 'flex', width: '100vw', height: '100vh', justifyContent: 'center' }}>
-        <div style={{ marginTop: isMobile ? '30vh' : '25vh' }}>
-          <h3 className='font-link' style={{ textAlign: 'center', color: '#faf9f6', fontSize: isMobile ? '24px' : '36px' }}>
-            Contact Me
-          </h3>
           <Box display="flex" 
           alignItems="center" 
           justifyContent="center" 
           textAlign="center" 
-          maxWidth="70vw" 
-          maxHeight="50vh" 
+          maxWidth="100vw" 
+          maxHeight="100vh" 
           flexDirection="column" 
           alignContent="center"
-          margin="0 auto">
+          >
+          <h3 className='font-link' style={{ textAlign: 'center', marginTop: isMobile ? '40%' : '20%' , color: '#faf9f6', fontSize: isMobile ? '24px' : '36px' }}>
+            Contact Me
+          </h3>
             <form>
-              <Box display="flex" flexDirection="row" marginTop={isMobile ? "12vh" : "20%"} gap="1vw">
+              <Box display="flex" flexDirection="row" marginTop={isMobile ? "12vh" : "1em"} gap="1vw">
                 <TextField value={name} fullWidth label="Name" InputProps={{
                   style : {color: '#faf9f6'}
                 }}
@@ -195,7 +194,6 @@ const Contact = ({isNight, isMobile}) => {
             </form>
           </Box>
         </div>
-      </div>
     </ThemeProvider>
   );
 };
