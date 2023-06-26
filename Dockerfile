@@ -31,7 +31,7 @@ RUN python backend/manage.py collectstatic --noinput
 
 FROM base as final
 
-RUN apt-get install -y nginx
+RUN apk add --no-cache nginx
 
 WORKDIR /portfolio
 COPY . /portfolio
