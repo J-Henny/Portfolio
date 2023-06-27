@@ -36,12 +36,17 @@ const HamburgerMenu = () => {
         </IconButton>
         <Menu
         anchorEl={anchorEl}
-        anchorOrigin={{
-          horizontal: 'center',
-          vertical: 'bottom',
-        }}
         open={open}
-        onClose={handleClose}>
+        onClose={handleClose}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        sx={{display: 'flex', flexDirection: 'row',}}>
           <MenuItem onClick={() => {
             navigate("/about");
             handleClose();
