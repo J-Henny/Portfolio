@@ -41,8 +41,8 @@ COPY --from=frontend /portfolio/frontend/build /portfolio/frontend/build
 COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
 RUN mv nginx.conf /etc/nginx/nginx.conf
 RUN mkdir -p /etc/certs
-COPY ../../../etc/certs/privkey.pem /etc/certs/
-COPY ../../../etc/certs/fullchain.pem /etc/certs/
+COPY temp/certs-link/privkey.pem /etc/certs/
+COPY temp/certs-link/fullchain.pem /etc/certs/
 
 EXPOSE 80
 CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend/backend.wsgi
