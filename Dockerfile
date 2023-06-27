@@ -36,7 +36,7 @@ RUN apk add --no-cache nginx
 WORKDIR /portfolio
 COPY . /portfolio
 
-COPY --from=backend /usr/lib/python3.9/site-packages /usr/lib/python3.9/site-packages
+COPY --from=backend /usr/local/lib/python3.9/site-packages /usr/local/lib/python3.9/site-packages
 COPY --from=frontend /portfolio/frontend/build /portfolio/frontend/build
 COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
 RUN mv nginx.conf /etc/nginx/nginx.conf

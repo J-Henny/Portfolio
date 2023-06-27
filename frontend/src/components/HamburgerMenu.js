@@ -1,8 +1,11 @@
 import { IconButton, Menu, MenuItem } from '@mui/material'
 import React, {useState} from 'react'
 import triforce from "../images/triforce.png"
+import { useNavigate } from 'react-router-dom';
 
 const HamburgerMenu = () => {
+
+  const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -12,6 +15,7 @@ const HamburgerMenu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   }
+  
 
 
   return (
@@ -34,9 +38,18 @@ const HamburgerMenu = () => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}>
-          <MenuItem onClick={handleClose}>About</MenuItem>
-          <MenuItem onClick={handleClose}>My Projects</MenuItem>
-          <MenuItem onClick={handleClose}>Contact</MenuItem>
+          <MenuItem onClick={() => {
+            navigate("/about");
+            handleClose();
+          }}>About</MenuItem>
+          <MenuItem onClick={() => {
+            navigate("/projects");
+            handleClose();
+          }}>My Projects</MenuItem>
+          <MenuItem onClick={() => {
+            navigate("/contact");
+            handleClose();
+          }}>Contact</MenuItem>
 
         </Menu>
       
