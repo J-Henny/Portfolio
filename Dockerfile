@@ -40,6 +40,7 @@ COPY --from=backend /usr/local/lib/python3.9/site-packages /usr/local/lib/python
 COPY --from=frontend /portfolio/frontend/build /portfolio/frontend/build
 COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/static
 RUN mv nginx.conf /etc/nginx/nginx.conf
+COPY /etc/certs /portfolio/certs
 
 EXPOSE 80
 CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend/backend.wsgi
