@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import triforce from "../images/triforce.png"
 import { useNavigate } from 'react-router-dom';
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({isNight}) => {
 
   const navigate = useNavigate();
 
@@ -46,19 +46,26 @@ const HamburgerMenu = () => {
           vertical: 'bottom',
           horizontal: 'center',
         }}
-        sx={{display: 'flex', flexDirection: 'row',}}>
-          <MenuItem onClick={() => {
-            navigate("/about");
-            handleClose();
-          }}>About</MenuItem>
-          <MenuItem onClick={() => {
-            navigate("/projects");
-            handleClose();
-          }}>My Projects</MenuItem>
-          <MenuItem onClick={() => {
-            navigate("/contact");
-            handleClose();
-          }}>Contact</MenuItem>
+        PaperProps={{
+          sx : {
+            backgroundColor: isNight ? '#7e72b0' : '#2c1d45',
+          },
+        }}
+        >
+          <div style = {{display: 'flex', flexDirection: 'row'}}>
+            <MenuItem onClick={() => {
+              navigate("/about");
+              handleClose();
+            }}>About</MenuItem>
+            <MenuItem onClick={() => {
+              navigate("/projects");
+              handleClose();
+            }}>My Projects</MenuItem>
+            <MenuItem onClick={() => {
+              navigate("/contact");
+              handleClose();
+            }}>Contact</MenuItem>
+          </div>
 
         </Menu>
       

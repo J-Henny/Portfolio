@@ -80,7 +80,7 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
               marginTop = "3vh"
               >
 
-              <HamburgerMenu/>
+              <HamburgerMenu isNight={isNight}/>
             </Box>
             
           </Box>
