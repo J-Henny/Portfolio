@@ -51,6 +51,7 @@ const HamburgerMenu = ({isNight}) => {
           sx : {
             backgroundColor: isNight ? '#2c1d45' : '#7e72b0',
             color: '#faf9f6',
+            margin: '1vw'
           },
         }}
         >
@@ -59,14 +60,26 @@ const HamburgerMenu = ({isNight}) => {
               navigate("/about");
               handleClose();
             }}
+            sx={{
+              fontFamily: "'Press Start 2P', cursive",
+              fontSize: '10px'
+            }}
             >About</MenuItem>
             <MenuItem onClick={() => {
               navigate("/projects");
               handleClose();
+            }}
+            sx={{
+              fontFamily: "'Press Start 2P', cursive",
+              fontSize: '10px'
             }}>My Projects</MenuItem>
             <MenuItem onClick={() => {
               navigate("/contact");
               handleClose();
+            }}
+            sx={{
+              fontFamily: "'Press Start 2P', cursive",
+              fontSize: '10px'
             }}>Contact</MenuItem>
           </div>
 
