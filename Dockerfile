@@ -43,7 +43,8 @@ RUN mv nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 ENV PYTHONPATH=/portfolio
-CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend.backend.wsgi:application
+WORKDIR /portfolio/backend
+CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend.wsgi:application
 
 
 

@@ -47,8 +47,10 @@ const HamburgerMenu = ({isNight}) => {
           horizontal: 'center',
         }}
         PaperProps={{
+          elevation : 0,
           sx : {
-            backgroundColor: isNight ? '#7e72b0' : '#2c1d45',
+            backgroundColor: isNight ? '#2c1d45' : '#7e72b0',
+            color: '#faf9f6',
           },
         }}
         >
@@ -56,7 +58,8 @@ const HamburgerMenu = ({isNight}) => {
             <MenuItem onClick={() => {
               navigate("/about");
               handleClose();
-            }}>About</MenuItem>
+            }}
+            >About</MenuItem>
             <MenuItem onClick={() => {
               navigate("/projects");
               handleClose();
