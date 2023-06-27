@@ -19,7 +19,7 @@ const HamburgerMenu = () => {
 
 
   return (
-    <div>
+    <div style={{justifyContent: 'center', display: 'flex'}}>
         <IconButton
         sx={{
           backgroundColor: 'transparent', // Remove the background color
@@ -36,6 +36,10 @@ const HamburgerMenu = () => {
         </IconButton>
         <Menu
         anchorEl={anchorEl}
+        anchorOrigin={{
+          horizontal: 'center',
+          vertical: 'bottom',
+        }}
         open={open}
         onClose={handleClose}>
           <MenuItem onClick={() => {

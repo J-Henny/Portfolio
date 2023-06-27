@@ -42,7 +42,7 @@ COPY --from=backend /portfolio/frontend/build/static /portfolio/frontend/build/s
 RUN mv nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
-CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 portfolio.backend.backend.wsgi
+CMD nginx && python -m gunicorn -b unix:/tmp/gunicorn.sock --timeout 600 backend.backend.wsgi:application
 
 
 
