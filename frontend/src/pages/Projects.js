@@ -13,7 +13,7 @@ const Projects = ({isNight, isMobile}) => {
       <div style={{marginTop: isMobile ? '25vh' : '10vh', display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '30vh', padding: '1rem'}}>
         <h3 className='font-link' style={{color: '#faf9f6', fontSize: isMobile ? '24px' : '36px'}}> My Projects</h3>
       
-      <Grid container spacing={15} sx={{justifyContent: 'center', maxWidth: isMobile ? '90%' : '80vw', marginTop: isMobile ? '0vh' : ''}}>
+      <Grid container spacing={15} sx={{justifyContent: 'center', maxWidth: isMobile ? '100vw' : '80vw', marginTop: isMobile ? '0vh' : ''}}>
         <Grid style ={{display: 'flex', justifyContent: 'center'}} item xs={12} sm={12} md={12} lg={6}>
           <ProjectBox
             imageSrcDay={dysiDay}

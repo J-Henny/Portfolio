@@ -51,7 +51,7 @@ const HamburgerMenu = ({isNight}) => {
           sx : {
             backgroundColor: isNight ? '#2c1d45' : '#7e72b0',
             color: '#faf9f6',
-            margin: '1vw'
+            marginBottom: '10px'
           },
         }}
         >
