@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import RouterHandler from "./utils/RouterHandler";
-import Navbar from "./components/Navbar";
-import { useMediaQuery } from "@mui/material";
+import React, { useState } from 'react';
+import RouterHandler from './utils/RouterHandler';
+import Navbar from './components/Navbar';
+import { useMediaQuery } from '@mui/material';
 
 function App() {
   const [isNight, setIsNight] = useState(true);
@@ -12,16 +12,10 @@ function App() {
     transition: 'background-color 0.5s',
     animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse',
   };
-  const navbarStyle = {
-    backgroundColor: isNight ? '#2c1d45' : '#7e72b0',
-    transition: 'background-color 0.5s',
-    animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse',
-    color: isNight ? '#faf9f6' : '#2c1d45',
-  };
 
   return (
     <div style={appStyle}>
-      <Navbar isNight={isNight} setIsNight={setIsNight} isMobile={isMobile} style={navbarStyle} />
+      <Navbar isNight={isNight} setIsNight={setIsNight} isMobile={isMobile} />
       <RouterHandler isNight={isNight} isMobile={isMobile} charPos={charPos} setCharPos={setCharPos} />
     </div>
   );
