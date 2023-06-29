@@ -97,59 +97,62 @@ const Contact = ({isNight, isMobile}) => {
   });
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ display: 'flex', width: '100vw', height: '100vh', justifyContent: 'center' }}>
-          <Box display="flex" 
-          alignItems="center" 
-          justifyContent="center" 
-          textAlign="center" 
-          maxWidth="100vw" 
-          maxHeight="100vh" 
-          flexDirection="column" 
-          alignContent="center"
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Box 
+            display="flex" 
+            justifyContent="center" 
+            flexDirection="column"
+            position="relative"
+            height="100vh"
+            marginTop="10vh"
           >
-          <h3 className='font-link' style={{ textAlign: 'center', marginTop: isMobile ? '40%' : '20%' , color: '#faf9f6', fontSize: isMobile ? '24px' : '36px' }}>
+          <h3 className='font-link' style={{textAlign: 'center', color: '#faf9f6', fontSize: isMobile ? '32px' : '36px' }}>
             Contact Me
           </h3>
             <form>
-              <Box display="flex" flexDirection="row" marginTop={isMobile ? "12vh" : "1em"} gap="1vw">
-                <TextField value={name} fullWidth label="Name" InputProps={{
-                  style : {color: '#faf9f6'}
-                }}
-                InputLabelProps={{
-                  style : {color: '#faf9f6'}
-                }}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}/>
-                <TextField value={email} fullWidth label="Email" InputProps={{
-                  style : {color: '#faf9f6'}
-                }}
-                InputLabelProps={{
-                  style : {color: '#faf9f6'}
-                }}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}/>
-              </Box>
-              <Box display="flex" marginTop="2vh">
-                <TextField value={message} label="Message" fullWidth multiline rows={8} InputProps={{
-                  style : {color: '#faf9f6'}
-                }}
-                InputLabelProps={{
-                  style : {color: '#faf9f6'}
-                }}
-                onChange={(e) => {
-                  setMessage(e.target.value);
-                }}/>
+              <Box gap={isMobile ? "2vw" : "1vw"} display="flex" flexDirection="column" padding={isMobile ? '1vw' : ''}>
+
+              
+                <Box display="flex" flexDirection="row" gap="2vw">
+                  <TextField value={name} fullWidth label="Name" InputProps={{
+                    style : {color: '#faf9f6'}
+                  }}
+                  InputLabelProps={{
+                    style : {color: '#faf9f6'}
+                  }}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}/>
+                  <TextField value={email} fullWidth label="Email" InputProps={{
+                    style : {color: '#faf9f6'}
+                  }}
+                  InputLabelProps={{
+                    style : {color: '#faf9f6'}
+                  }}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}/>
+                </Box>
+                <Box display="flex" position="relative">
+                  <TextField value={message} label="Message" fullWidth multiline rows={8} InputProps={{
+                    style : {color: '#faf9f6'}
+                  }}
+                  InputLabelProps={{
+                    style : {color: '#faf9f6'}
+                  }}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                  }}/>
+                </Box>
               </Box>
 
 
               <Box
-              marginTop="2vh"
               display="flex"
               flexDirection="row"
               alignItems="center"
-              position="relative">
+              position="relative"
+              >
                 <Button
                 fullWidth
                 disableRipple
@@ -164,12 +167,13 @@ const Contact = ({isNight, isMobile}) => {
                   },
                 }}
                 >
-                  <img src={imageSrc} style={{ width: '100%', maxWidth: '10vw', height: 'auto', borderRadius: '8px', transition: 'color 0.5s', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse' }}/>
+                  <img src={imageSrc} style={{height: 'auto', width: isMobile ? '15vw' : '10vw', borderRadius: '8px', transition: 'color 0.5s', animation: isNight ? 'gradient 5s linear infinite' : 'gradient 5s linear infinite reverse' }}/>
                 </Button>
                 <Box
-                position="absolute"
                 alignItems="center"
-                left="70%">
+                position="inherit"
+                right="5vw"
+                >
                   <span className='font-link' style={{textAlign: 'left', fontSize: isMobile ? '10px' : '12px', color: '#faf9f6'}}>
                     {state === "idle" && (
                       <></>

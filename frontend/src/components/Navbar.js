@@ -5,7 +5,6 @@ import LinkedInButton from './LinkedInButton';
 import NightLight from './NightLight';
 import AboutButton from './AboutButton';
 import ContactButton from './ContactButton';
-import ProjectsButton from './ProjectsButton';
 import HamburgerMenu from './HamburgerMenu';
 import TitleButton from './TitleButton';
 
@@ -31,7 +30,7 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
           padding={'2vw'}
           position="fixed"
           width="100vw"
-          height="8vh"
+          top="2vh"
           zIndex="2"
         >
             <Box
@@ -52,7 +51,6 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
               gap="5px"
               >
                 <AboutButton/>
-                <ProjectsButton/>
                 <ContactButton/>
                 <GithubButton iconStyle={iconStyle}/>
                 <LinkedInButton iconStyle={iconStyle}/>
@@ -77,7 +75,8 @@ const Navbar = ({isNight, setIsNight, isMobile}) => {
             <Box
               display="flex"
               justifyContent="center"
-              marginTop = "3vh"
+              position = "relative"
+              top = "2vh"
               >
 
               <HamburgerMenu isNight={isNight}/>

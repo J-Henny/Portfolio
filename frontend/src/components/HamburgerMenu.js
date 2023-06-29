@@ -66,14 +66,6 @@ const HamburgerMenu = ({isNight}) => {
             }}
             >About</MenuItem>
             <MenuItem onClick={() => {
-              navigate("/projects");
-              handleClose();
-            }}
-            sx={{
-              fontFamily: "'Press Start 2P', cursive",
-              fontSize: '10px'
-            }}>My Projects</MenuItem>
-            <MenuItem onClick={() => {
               navigate("/contact");
               handleClose();
             }}
