@@ -172,7 +172,7 @@ const Contact = ({ isNight, isMobile }) => {
                 position="absolute"
                 right={isMobile ? '3vw' : '2vw'}
               >
-                <span className='font-link' style={{color: '#faf9f6', fontSize: isMobile ? '10px' : '24px'}}>
+                <span className='font-link' style={{color: '#faf9f6', fontSize: isMobile ? '10px' : '12px'}}>
 
                 
                 {state === "sending" && (
