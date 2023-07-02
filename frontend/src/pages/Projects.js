@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper, Typography, Box, Button } from '@mui/material';
+import { Grid, Paper, Typography, Box, Button, Link } from '@mui/material';
 import dysiDay from "../images/didyouseeit-dark.png";
 import dysiNight from "../images/didyouseeit-light.png";
 import spotifyDay from "../images/spotify-dark.png";
@@ -38,7 +38,13 @@ const Projects = ({isNight, isMobile}) => {
         </Grid>
       </Grid>
 
-        <h6 className='font-link' style={{textAlign: 'center', fontSize: '12px', color: '#faf9f6'}}>All my other projects and work are available on my Github.</h6>
+        <h6 className='font-link' style={{textAlign: 'center', fontSize: '12px', color: '#faf9f6'}}>All my other projects and work are available on my <Link
+        className='font-link'
+        color={ isNight ? '#7e72b0' : '#2c1d45'}
+        onClick={() => {
+          window.open("https://github.com/J-Henny", '_blank');
+        }}>Github</Link>.</h6>
+        
       </div>
       
     </div>
