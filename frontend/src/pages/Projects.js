@@ -5,6 +5,7 @@ import dysiNight from "../images/didyouseeit-light.png";
 import spotifyDay from "../images/spotify-dark.png";
 import spotifyNight from "../images/spotify-light.png";
 import '../index.css'
+import { useNavigate } from 'react-router-dom';
 
 const Projects = ({isNight, isMobile}) => {
   
@@ -29,7 +30,7 @@ const Projects = ({isNight, isMobile}) => {
           <ProjectBox
             imageSrcDay={spotifyDay}
             imageSrcNight={spotifyNight}
-            title="Spot Bot!"
+            title="Put Me On!"
             description="A personalized playlist generator in Spotify using collaborative filtering and exploring new artists based on your listening habits. (Public interface coming soon!)"
             isNight={isNight}
             isMobile={isMobile}
@@ -55,19 +56,21 @@ const Projects = ({isNight, isMobile}) => {
 
 const ProjectBox = ({ imageSrcNight, imageSrcDay, title, description, isNight, isMobile, num }) => {
   const imageSrc = isNight ? imageSrcNight : imageSrcDay;
+  const navigate = useNavigate();
   const linkHandler = (projectNum) => {
     let link = "";
     switch (projectNum){
       case 1:
         link = "https://didyouseeit.org/"
+        window.open(link, "_blank");
         break;
       case 2:
-        link = "https://github.com/J-Henny/Spot-Bot"
+        navigate('/spotbot');
         break;
       default:
         break;
     }
-    window.open(link, "_blank");
+    
   }
   return (
     <Button style={{

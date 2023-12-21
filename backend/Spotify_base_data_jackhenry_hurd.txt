@@ -1,0 +1,263 @@
+id,artist_name(s),song_name,popularity,explicit?,danceability,energy,speechiness,acousticness,instrumentalness,liveness,valence
+
+7jYd6GwT72RhhKMTZ64Z1H,['lil hero'],big ballin,40,False,0.609,0.73,0.0682,0.000483,1.54e-06,0.369,0.483
+
+48uAefi9v53sT1HbBfa7vD,['MIKE'],Set the Mood,47,True,0.449,0.814,0.0843,2.48e-05,0,0.462,0.509
+
+6I7XPrunF1zHlEbgDbJNCw,['Sideshow'],MR COULDN’T HURT A FLY,28,True,0.39,0.691,0.279,0.00632,7.27e-06,0.207,0.546
+
+2TKrYbPF5u0CLzTUeLEcA4,['MIKE'],For You,21,True,0.828,0.468,0.0474,0.186,0.000112,0.101,0.55
+
+7cydqy4KqoI8LXpdjo2BqS,"['Chavo', 'Pi’erre Bourne']",Michigan,48,True,0.469,0.583,0.285,0.0151,1.87e-06,0.278,0.218
+
+7nc7mlSdWYeFom84zZ8Wr8,"['Cochise', '$NOT']",Tell Em,78,True,0.672,0.717,0.226,0.103,0,0.398,0.473
+
+20tMFzQngWtXPNVUSI0XhU,"['B. Cool-Aid', 'Pink Siifu', 'Ahwlee', 'DJ Harrison', 'V.C.R', 'Malik Abdul-Rahmaan']",Diamonds,30,True,0.6,0.41,0.317,0.0865,0.00541,0.121,0.255
+
+1ODz2dIsUE3nLMjapT2oNI,['tg.blk'],Cap Chronicles,0,True,0.639,0.585,0.4,0.689,0,0.0948,0.389
+
+6lIRYe72fn1pf7TNqfI0ul,"['Cautious Clay', 'Remi Wolf', 'sophie meiers', 'Still Woozy', 'Claud', 'Melanie Faye', 'HXNS']","Cheesin’ (with Cautious Clay, Remi Wolf, Still Woozy, Sophie Meiers, Claud, Melanie Faye, & HXNS)",59,False,0.818,0.623,0.043,0.201,0,0.112,0.968
+
+7jb5XsfhW5ZWsMBGO6eHE5,['dedwrite'],Kirb in my cup,60,True,0.753,0.327,0.33,0.0505,2.85e-05,0.145,0.181
+
+5wUVcvWtmLdGhkFiBXvvcF,"['Pink Siifu', 'Valee']",Griptape'!!,28,True,0.623,0.796,0.275,0.233,0,0.0974,0.667
+
+0UcYNTeGXilqjMBBCbb1Ce,['Knxwledge'],I Heard,15,False,0.671,0.495,0.355,0.0249,0.0257,0.18,0.571
+
+5a5q1sFcpMoPRk5fRGWq2W,['Take Van'],In My Head,54,False,0.709,0.504,0.0311,0.224,0.772,0.146,0.651
+
+1N53xvb3ABMtZkPHuFSe4b,['Devonwho'],uy6,5,False,0.596,0.38,0.231,0.757,0.922,0.111,0.399
+
+4wx3jt0cWGrHK5EK3z62RW,['lil hero'],fasho fashizzy,40,True,0.359,0.659,0.0368,0.257,0,0.185,0.534
+
+6fpBjPf37z4b55lAiaIReL,['lil hero'],easy going down,36,False,0.564,0.943,0.146,0.00296,2.21e-06,0.172,0.515
+
+4nRGrgAvCksN2AGk1cfK02,['Zelooperz'],JayJay-Z,47,True,0.615,0.702,0.354,0.0146,1.58e-05,0.319,0.735
+
+2RU67aiaESQ7t9D1xUJqBu,"['Moon Boots', 'Fiora']",I Want Your Attention,49,False,0.806,0.608,0.0496,0.0178,0.314,0.13,0.561
+
+7zuSn410s3z8Ki7iuO6ZSO,"['RUNNER BOY', 'Babebee']",BACKWARDS,48,False,0.538,0.848,0.0329,0.119,0.618,0.174,0.527
+
+3vtl00JdBI5bIoVvasWAJy,['Chester Watson'],Nujabes,14,True,0.692,0.42,0.0898,0.387,0.000256,0.107,0.246
+
+040bfxASXZ4RHrb5my05ZT,['Chester Watson'],Picbascassquiato,29,False,0.532,0.873,0.339,0.5,0,0.423,0.902
+
+4UJ8bdbAw3qdETpt68BUN8,"['Your Old Droog', 'Heems']",Bangladesh,37,True,0.58,0.673,0.424,0.36,3.97e-05,0.536,0.418
+
+2eGKhQce5DKGqrxPEBAOa9,"['MIKE', 'Sister Nancy']",Stop Worry!,29,True,0.575,0.749,0.228,0.225,0,0.367,0.897
+
+7ANFHE3Oy5vjiGmlAd4aXm,['Chester Watson'],Sunbeam,17,True,0.659,0.675,0.319,0.0726,0.0538,0.0741,0.266
+
+5a70qVVt0SBWXaIsbwH1iO,['Chester Watson'],spirits,8,True,0.363,0.486,0.166,0.557,0.389,0.105,0.191
+
+0RqcWBkIDFGaZJ9YR1Ibzi,['Devonwho'],nonsense,27,False,0.579,0.683,0.0876,0.00277,0.96,0.209,0.422
+
+2KxiZbKr2PdsO2CKqDN5il,"['Pink Siifu', 'YUNGMORPHEUS']",Whole Time,9,True,0.378,0.648,0.273,0.347,0,0.192,0.0654
+
+7yh3VvDNsjlSVZdJhEav1X,['LoVibe.'],Whatchudone.,17,False,0.656,0.94,0.295,0.00838,0,0.157,0.871
+
+1CbxG199T0fzfUV5EO7aPV,"['Free Nationals', 'Chronixx']",Eternal Light,69,False,0.793,0.465,0.271,0.648,0.000132,0.0871,0.898
+
+41glcw7981FPbxErG2iee6,['Mach-Hommy'],Marie,47,True,0.382,0.556,0.164,0.649,0.118,0.126,0.0785
+
+39O6ZonOhhzjvdKqeqoSnh,"['Fredfades', 'Mndsgn', 'Chester Watson']",Space Carnival,14,True,0.587,0.695,0.358,0.221,2.18e-06,0.39,0.757
+
+0LH7ijaQi0ybY6Oe4SCLo1,['Larry June'],Watering My Plants,61,True,0.572,0.578,0.266,0.0541,1.12e-05,0.388,0.77
+
+5SWyD2D3WMmOLoSGT4QKkA,['Zenden Lavon'],like dat,7,True,0.656,0.686,0.213,0.295,0,0.302,0.902
+
+1g93upxwFhq1vg0OPYTq2r,['Young Nudy'],Jugg,46,True,0.765,0.679,0.339,0.169,0,0.397,0.663
+
+4hLRoia2W2NB6p4EmiRsjZ,['Devonwho'],wer_new,4,False,0.387,0.52,0.0354,0.000759,0.787,0.262,0.475
+
+0a8OiFNwGrF2bWkOFf3KBe,"['Quelle Chris', 'MoRuf', 'Pink Siifu']",The Sky is Blue Because the Sunset is Red,15,True,0.438,0.804,0.375,0.56,1.25e-06,0.382,0.565
+
+4yG4v9SUKC5xyH4c49GBo5,['Sideshow'],01'beigecamry,54,True,0.689,0.724,0.0333,0.461,1.38e-05,0.362,0.606
+
+2y4PPcgm83nZqq9gM5Sze2,"['BoofPaxkMooky', 'GRIMM Doza']",You & Me,43,True,0.458,0.769,0.198,0.63,2.96e-05,0.622,0.668
+
+2gaernllsCRzjkR8qXgz3Q,['ICYTWAT'],Down Bad,39,True,0.766,0.69,0.0694,0.0116,3.8e-06,0.111,0.158
+
+1F7CVxtGTmALZc8ag0QLug,['Chris Travis'],Stayin True,41,True,0.54,0.208,0.305,0.0893,0.00455,0.17,0.0779
+
+0pLnk5WxmiRCFPVkgilkX2,"['Mach-Hommy', 'Westside Gunn', 'Keisha Plum']",Folie Á Deux (feat. Westside Gunn & Keisha Plum),50,True,0.541,0.727,0.208,0.654,0.00288,0.21,0.457
+
+15gPvZFGYcznrSDxyv7zjC,['Mach-Hommy'],Maslow's Hammer,22,True,0.663,0.727,0.286,0.871,0,0.159,0.353
+
+1xP57iPdjKXovg1Ir3Z32X,"['Psymun', 'Chester Watson']",Fumes,8,True,0.557,0.75,0.34,0.215,0,0.749,0.659
+
+4NczzeHBQPPDO0B9AAmB8d,['Sam Gellaitry'],Assumptions,62,False,0.639,0.815,0.221,0.123,0.00113,0.193,0.443
+
+5IT1CDNuikl4Jpf549LBda,"['Curren$y', 'The Alchemist']",Half Moon Mornings,44,True,0.388,0.6,0.901,0.83,0.00112,0.228,0.545
+
+7voRcwJoLV5OstiZfZYQL6,['Chester Watson'],day trip (clocks),13,True,0.805,0.48,0.215,0.0334,0.000323,0.109,0.511
+
+1Fs3qFAEEYoMnYqnUxZVIy,"['Magic Flowers', 'P. PAT']",Твоё Тело,31,True,0.838,0.597,0.212,0.0755,0.369,0.0708,0.18
+
+7dx051ylMUp14nZLkpa3n7,['sheldon charlot'],so damn good,37,False,0.482,0.439,0.135,0.093,0,0.169,0.374
+
+1MIj0inxy1ahcfFFPlUhGe,"['OG Spliff', 'Argov']",baby boy,19,True,0.407,0.543,0.339,0.201,3.42e-05,0.885,0.648
+
+5x9ym2BnstMSyP7TQ2C9i2,"['Popstar Benny', 'Niontay', 'MIKE']",ATL Freestyle,31,True,0.692,0.571,0.218,0.0135,8.23e-06,0.259,0.659
+
+1fZlxYXWrsus7bSPjX5Wng,"['namesbliss', 'scruz']",Iniesta Flow,48,False,0.563,0.613,0.393,0.813,0,0.106,0.42
+
+67IyGQKVzg7JFqbhthtfvI,['Jadasea'],INNERVISIONS,28,True,0.556,0.426,0.0417,0.0136,0.000252,0.246,0.82
+
+6BCRlRKqMEOydKLv1VZBdO,['lil hero'],gun show,44,False,0.539,0.808,0.0457,0.000826,0,0.22,0.482
+
+3mYP9Tec1OzcwNKuCEqJzE,"['EAZYBAKED', 'MontyCler']",Certified,41,False,0.92,0.532,0.317,0.00517,0.0013,0.447,0.437
+
+2KKrlVEhlXqfrLR1okapHp,['MIKE'],Burning Desire,50,True,0.684,0.815,0.162,0.0769,0,0.115,0.427
+
+1c8PjFzb4RWfAXgupKgbba,['mynameisntjmack'],Leak,46,True,0.326,0.451,0.229,0.559,0,0.107,0.602
+
+3QTmczUQHZDg0c1KUVU0VA,['Chester Watson'],money & love,19,True,0.433,0.654,0.439,0.254,0.0284,0.182,0.503
+
+0YVAbRnpG4mVxxwob9DdS8,['Jourden'],Flow,52,True,0.631,0.614,0.29,0.395,8.16e-06,0.115,0.55
+
+3tgHGoK5ItQv2q2yqggxlb,['Magdalena Bay'],Secrets (Your Fire),52,False,0.691,0.827,0.0402,0.00177,0.637,0.416,0.826
+
+7Fege3yv4dvehB3NdRBGwI,['Gunna'],Banking On Me,74,True,0.793,0.308,0.0466,0.613,1.68e-05,0.0953,0.46
+
+0MXemkrh7WpAfiafcGQwZO,['Destroy Lonely'],NOSTYLIST,72,True,0.567,0.773,0.0775,0.0396,0,0.111,0.496
+
+5OGqcCVbPUB8mdW2UvTj58,['Niontay'],Ridewimmie (l95er),31,True,0.466,0.48,0.0766,0.125,0.0246,0.103,0.0951
+
+7tJzIEqZV5tzuvol0Voq7Z,['Knxwledge'],dont be afraid,57,False,0.5,0.863,0.528,0.0401,0.00193,0.381,0.579
+
+7cMFjxhbXBpOlais7KMF3j,['Daft Punk'],Voyager,64,False,0.669,0.743,0.0494,0.288,0.805,0.309,0.28
+
+6Z9iKYBsHtA8Dgs0Vj1mXz,['YUNGMORPHEUS'],Thangs Change,17,True,0.575,0.575,0.0711,0.399,0.00479,0.301,0.522
+
+1l1fxqGQNQ33u1B2VTNXz8,"['Jiles', 'Big Super']",Stones,1,True,0.603,0.701,0.347,0.0604,0.00102,0.099,0.405
+
+5wiSQvPrvr9KdlHJ9DmtL6,['Never Dull'],Try 2 Luv,47,False,0.804,0.832,0.05,0.00386,0.86,0.0532,0.892
+
+5Vp7xBUxV22dCkvUaCOjES,['Cochise'],PLASMA,45,True,0.695,0.489,0.146,0.0306,0,0.417,0.622
+
+27BuErcU8fgsy1uNSA0y2z,"['ARDN', 'femdot.']",ARE U KIDDING,43,True,0.566,0.762,0.289,0.0603,0,0.143,0.668
+
+6Xa3ZCamaDFWBmxOFoR2n8,"['1999 WRITE THE FUTURE', 'BADBADNOTGOOD', 'Westside Gunn', 'Conway the Machine']",MiNt cHoCoLaTe (feat. Conway the Machine),58,True,0.493,0.508,0.273,0.61,0,0.368,0.705
+
+7bn8W75Gt6n1CJOG3W8CKp,"['Mach-Hommy', 'Tha God Fahim']",BLK $,19,True,0.763,0.488,0.11,0.412,0,0.106,0.741
+
+1fUPEJyR0FFdog8M0AablM,"['idontknowjeffery', 'Marcus.901', 'Duke Deuce']",MNEIG - G-MIX,44,True,0.891,0.67,0.121,0.00254,0.000118,0.215,0.661
+
+1mRmjfzGVNoXYnv20CAdWP,['Duke Deuce'],GTD,34,True,0.88,0.827,0.352,0.00424,0,0.395,0.825
+
+6TJaoJX8VhptZ0DkcsjWaR,['LUCKI'],2021 Vibes,71,True,0.816,0.252,0.454,0.5,2.26e-06,0.102,0.256
+
+4XE1StBll9KcNa8nHa3nXG,"['KAYTRAMINÉ', 'Aminé', 'KAYTRANADA']",Rebuke,47,True,0.545,0.588,0.101,0.18,0,0.127,0.502
+
+0smgkpVia3VCXgY4qhVJvp,['070 Shake'],Guilty Conscience,63,False,0.539,0.638,0.136,0.00676,0,0.123,0.222
+
+1nDgL42y7nnTFSQYouFOA7,"['Masta Ace', 'MF DOOM', 'Melodiesinfonie']",Think I Am - Melodiesinfonie Remix,43,False,0.8,0.564,0.0525,0.521,1.07e-06,0.0973,0.657
+
+4LadsagnXZM7SEOpHjHIHA,['Sexyy Red'],Looking For The Hoes (Ain’t My Fault),75,True,0.681,0.686,0.31,0.077,0,0.21,0.568
+
+4RsTfAuTiUyL7GKGPiNC0w,['Duke Deuce'],Crunk Ain't Dead,60,True,0.767,0.931,0.269,0.0397,0,0.182,0.474
+
+2J8E2RQNouSJ0rt6iqCbj3,['Cochise'],Stock X,41,True,0.703,0.511,0.0751,0.0208,0,0.249,0.658
+
+5P4DB18ovxpMrvBTxHIf63,['Joony'],NEED IT,40,True,0.824,0.576,0.0755,0.055,1.17e-05,0.108,0.547
+
+2MjhK44oBBWTwCEyKGFny3,"['Maxo Kream', 'Luh Tyler']",Whatchamacallit (feat. Luh Tyler),43,True,0.793,0.647,0.233,0.0246,0,0.118,0.503
+
+4RK5yGv7e8a5Nk5U9QvBDe,['datfootdive'],Weaving a Story,28,False,0.358,0.749,0.0401,0.00576,0.869,0.168,0.268
+
+4U4j3Y9ws1HgyTNxP7ERyL,"['Pink Siifu', 'V.C.R', 'Coco O.', 'Butcher Brown']",SMILE (wit yo Gold),11,True,0.491,0.421,0.0302,0.191,0.192,0.413,0.324
+
+1pha6SY5RscLvrWS62XYdy,"['Zelooperz', 'Quadie Diesel']",Delema,21,True,0.721,0.581,0.297,0.328,0,0.213,0.61
+
+4kjI1gwQZRKNDkw1nI475M,['Travis Scott'],MY EYES,87,True,0.455,0.621,0.0517,0.651,2.59e-06,0.123,0.28
+
+4uQ3gxaUXJQFAsQ1t2diwS,['Ivan Ave'],Jellylude,30,False,0.535,0.658,0.298,0.232,0.935,0.105,0.714
+
+3EvxYnaPHmXTCcFZwxFtnA,"['LSDREAM', 'Z-Trip']",MOON LEGS,35,True,0.695,0.817,0.277,0.0208,0.00259,0.397,0.366
+
+4X8P4arz5eir4T1VdieWvv,"['Earl Sweatshirt', 'The Alchemist']",Heat Check,57,True,0.554,0.562,0.19,0.809,0,0.62,0.4
+
+08vlprFBmwh9TQnjXUtZDG,['Jordan Ward'],FAMJAM4000,67,False,0.869,0.574,0.0623,0.467,0.339,0.15,0.725
+
+0ymjnhjRUHIVcXe22DpWnP,['GEE LEE'],JAY GEE,44,False,0.853,0.134,0.297,0.625,0.901,0.113,0.549
+
+37etCHGKSycDXh5YlTfTFY,"['Earl Sweatshirt', 'The Alchemist']",Mac Deuce,56,True,0.401,0.665,0.0789,0.614,0.0244,0.211,0.563
+
+7JiVzZvbjvJyOHleK5DhD3,['MIKE'],Dambe,48,True,0.593,0.537,0.473,0.127,0.333,0.6,0.911
+
+1kiRPwkkAHF35WJFhU8uJm,['$ean Wire'],Ultra,4,True,0.707,0.546,0.157,0.292,0,0.126,0.56
+
+3Q8MlpSWDERqSAZUJILgZz,"['NugLife', 'Tha God Fahim']",HYPNOSIS FREESTYLE,30,True,0.743,0.697,0.317,0.231,2.09e-06,0.197,0.586
+
+4rxD9Ar3OlsgGOnblWUKqr,"[""Dre'es""]",Warm,63,False,0.662,0.296,0.0301,0.887,0.111,0.119,0.434
+
+6cbAELCAcTFXFEa8OaQKNW,"['Memphis Cult', 'Groove Dealers', 'SPLYXER']",9mm - Cassette version,61,True,0.764,0.961,0.223,0.683,0.000109,0.113,0.609
+
+1mfdz3PeXUGuQFO1Q0huO7,['Marion'],Exchange - Remix,13,True,0.455,0.421,0.136,0.339,0,0.11,0.337
+
+7Kv0yPSr550uUxbAwAhH01,['Starjunk 95'],Groove District,57,False,0.776,0.849,0.0392,0.0769,0.156,0.157,0.203
+
+573QxTYkJNhZMh8GjipJsO,"['Jiles', 'Vinyl Villain']",Sauce Gardner,11,True,0.572,0.896,0.447,0.516,0.0884,0.129,0.286
+
+0gQxkY5qip1aE3Oamibu6i,['Nephew Hesh'],Reasons,1,False,0.646,0.603,0.11,0.187,0.384,0.266,0.77
+
+4ALUT7jcNAbcTDmlvHpSWD,['XiiiDolor'],Sex Is A Sin,43,True,0.566,0.941,0.126,0.0904,7.95e-05,0.362,0.475
+
+1sNxI94OyGy3D10nsKEYcB,"['AKAI SOLO', 'Pink Siifu']",2k4eva,23,True,0.533,0.732,0.34,0.572,0,0.562,0.573
+
+2KoR4BvCR2J2E5rYaCvNU8,['Reece Geller'],Dial Tone,24,True,0.698,0.627,0.213,0.704,0,0.155,0.671
+
+4PPUbqiCvcuepzGuVwqKQz,"['Cavalier', 'Quelle Chris']",Sniz and Woop,25,True,0.524,0.627,0.273,0.862,0.000139,0.501,0.389
+
+32m2WIBgCeClCIKP6FHX5m,"['BlackDoe', 'Chaanill', 'Yella']",Air - Mixed,1,False,0.687,0.497,0.212,0.477,0,0.193,0.542
+
+0a5PrKhmAlB2ori4dZEKPL,"['Raff Riff highroller', 'Bronson Action Bam Bam']",Bird on a Wire,37,True,0.628,0.668,0.146,0.0638,0,0.0537,0.598
+
+78zRFpBhk3isxIPfsypQOu,['Anycia'],HOMEWRECKER,39,True,0.731,0.559,0.229,0.297,0,0.0917,0.538
+
+7IyZckBiqfLmjfnmjrwqRA,['insyt.'],Gemini,1,True,0.741,0.696,0.254,0.0361,0,0.171,0.474
+
+7AQMFaE2pp9kjDTU5Tg66T,['FLOWERPATCH!'],JPEGMAFIA Was Right About Morrissey,33,False,0.515,0.982,0.0519,0.506,0.87,0.123,0.783
+
+5rQxF5XeBZZfhH7Vq6B7e2,"['Kahlil Blu', 'Fifthpower']",THE END,12,False,0.703,0.852,0.34,0.479,4.89e-06,0.0897,0.824
+
+4JiLpvvnPiQtsf4izF1SQ5,['Liv.e'],Wild Animals,47,True,0.672,0.514,0.03,0.103,0.00013,0.0991,0.549
+
+1MPYXBsVYoAwCiJfitAD0H,['Nephew Hesh'],above,0,True,0.486,0.651,0.307,0.31,0.00844,0.231,0.405
+
+5zXZyDfMKE2cj71yCJMEH0,"['Van Buren Records', 'AzizTheShake', 'Jiles', 'Luke Bar$', 'FELIX!', 'invada']",JUMPSTREET,10,True,0.787,0.686,0.3,0.0524,0.000106,0.178,0.552
+
+0xfbz0ArDclEvBokbmUtZc,['98preem'],Espresso Café,2,True,0.738,0.467,0.31,0.444,1.57e-05,0.16,0.744
+
+3AWzMxXH40pxWrqeLttTAO,['MIKE'],Airdrop,31,True,0.377,0.817,0.0695,0.515,0,0.631,0.728
+
+4CCrZzRdeWYrWJ0DoN4XCa,['TiaCorine'],FreakyT,65,True,0.806,0.542,0.064,0.241,0.000494,0.113,0.14
+
+4n358XQMHXd0xi6NazWdxr,"['KAYTRANADA', 'GoldLink', 'Ari PenSmith', 'Eight9FLY']",Vex Oh (feat. Eight9FLY),64,True,0.742,0.645,0.386,0.148,2.86e-05,0.0861,0.804
+
+6DJ3dfsY7fOU161ZMjzWIH,['Hikaru Utada'],Automatic,59,False,0.707,0.87,0.0478,0.0625,0.000109,0.142,0.708
+
+0pAH4gzhf7UcnFQbS5Cr9u,"['SwuM', 'Jinsang']","In Space, Alone",24,False,0.659,0.611,0.166,0.168,0.901,0.138,0.397
+
+27bzzaiF1f6CXd13jc8QEy,"['MIKE', 'Larry June']",Golden Hour - feat. Larry June,46,True,0.226,0.896,0.128,0.0402,0,0.286,0.604
+
+5mmVLH57t3gZarjOVFyB65,['0P1UM*'],Mr.Fortune,48,True,0.588,0.427,0.11,0.586,0,0.0765,0.546
+
+3dSZcr7SWwFdOmY0r3Ryih,['Qendresa'],Be Mine,45,False,0.652,0.642,0.0368,0.0652,0.00198,0.29,0.63
+
+4cOVTA2GfYTHw99AJDQpHo,"['KAYTRANADA', 'Tinashe']",The Worst In Me,57,True,0.784,0.645,0.402,0.00936,0.000132,0.117,0.59
+
+60HR5sYmki1HFC0JbHrAhw,['RUBY DA $LOTH'],WΣLCOMΣ TΘ H3LL,23,True,0.724,0.871,0.0695,0.144,6.69e-05,0.377,0.202
+
+7CSgpZ2zoX55IXbRvtWTiL,['Take'],Tuesday Never Comes,1,False,0.562,0.556,0.158,0.0212,0.123,0.392,0.338
+
+7wX1OTzBTiV4Lup0rEBlOA,"['Serum', 'Voltage']",Paradise,13,False,0.654,0.896,0.0526,0.0531,0.897,0.47,0.102
+
+23vFAarJZb0hoCfF2uURzp,['Glokk40Spaz'],Fuck Sum,55,True,0.612,0.373,0.0629,0.0217,0,0.113,0.0976
+
+2EfmLcdpeWevr5JT7bEfMq,"['conswank', 'My Favorite Color']",Blunt Packed to my Head,21,True,0.531,0.788,0.214,0.128,2.82e-05,0.133,0.649
+
+3vy3ld7my2hDUTv4u7KIJR,['Okay Kaya'],Mother Nature's Bitch,62,False,0.729,0.588,0.0339,0.176,0.582,0.216,0.749
+
+4AjBYexFlWp93mTW1K4sJw,['7DASAI'],I love your oboe,3,False,0.49,0.67,0.327,0.0326,0,0.253,0.38
